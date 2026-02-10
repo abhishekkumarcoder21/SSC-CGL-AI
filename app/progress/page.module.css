@@ -1,68 +1,160 @@
+/* Progress — Premium */
+
+/* Streak Card */
 .streakCard {
     display: flex;
     align-items: center;
-    gap: var(--space-md);
-    text-align: center;
+    gap: 16px;
+    padding: 18px 20px;
+    background: var(--accent-gradient-subtle);
+    border: 1px solid var(--border-accent);
 }
 
 .streakIcon {
     font-size: 2rem;
+    filter: drop-shadow(0 2px 8px rgba(255, 100, 0, 0.3));
 }
 
 .streakNum {
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-size: 1.375rem;
+    font-weight: 800;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
 }
 
 .streakDivider {
     width: 1px;
     height: 32px;
-    background: var(--border);
+    background: var(--border-light);
 }
 
-/* Weekly grid */
+/* Subject Progress */
+.subjectSection {
+    margin-bottom: var(--space-lg);
+}
+
+.subjectItem {
+    margin-bottom: var(--space-md);
+}
+
+/* Weekly Grid — 7 columns */
 .weekGrid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 6px;
+    gap: 8px;
 }
 
 .weekDay {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
-    padding: 8px 0;
-    border-radius: var(--radius-sm);
+    gap: 8px;
+    padding: 10px 4px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.25s;
+}
+
+.weekDay span {
+    font-size: 0.6875rem !important;
+    font-weight: 600;
     color: var(--text-muted);
-}
-
-.weekToday {
-    background: var(--accent-surface);
-    color: var(--accent-light);
-}
-
-.weekPast {
-    color: var(--text-secondary);
+    letter-spacing: 0.02em;
 }
 
 .weekDot {
-    width: 20px;
-    height: 20px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.6875rem;
+    font-size: 0.75rem;
     font-weight: 700;
-    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1.5px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-muted);
+    transition: all 0.3s;
+}
+
+/* Today — highlighted with accent glow */
+.weekToday {
+    background: rgba(99, 102, 241, 0.08);
+    border-color: rgba(99, 102, 241, 0.25);
+}
+
+.weekToday span {
+    color: var(--accent-bright) !important;
 }
 
 .weekToday .weekDot {
-    background: var(--accent);
-    color: #fff;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 0 14px rgba(99, 102, 241, 0.35);
 }
 
+/* Past days — green check */
 .weekPast .weekDot {
-    background: var(--green-soft);
-    color: var(--green);
+    background: rgba(16, 185, 129, 0.15);
+    border-color: rgba(16, 185, 129, 0.35);
+    color: #10b981;
+}
+
+/* Stats Row (for if used) */
+.statsRow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: var(--space-lg);
+}
+
+.statCard {
+    padding: 16px 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    text-align: center;
+    backdrop-filter: blur(12px);
+    position: relative;
+    overflow: hidden;
+}
+
+.statCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent-gradient);
+    opacity: 0.5;
+}
+
+.statEmoji {
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+}
+
+.statValue {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.statLabel {
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
 }

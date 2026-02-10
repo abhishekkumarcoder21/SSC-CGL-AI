@@ -1,72 +1,152 @@
+/* Rank — Premium */
+
 .rankCard {
-    padding: var(--space-lg);
-}
-
-.rankHeader {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
+    text-align: center;
+    padding: var(--space-xl) var(--space-lg);
     margin-bottom: var(--space-md);
+    position: relative;
+    overflow: hidden;
 }
 
-.rankEmoji {
-    font-size: 1.25rem;
+.rankCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent-gradient);
 }
 
-.percentileDisplay {
-    margin-bottom: var(--space-md);
+.rankBadge {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-sm);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
 }
 
-.percentileNum {
-    font-size: 1.75rem;
+.rankTitle {
+    font-size: 0.8125rem;
     font-weight: 700;
-    color: var(--accent-light);
-    line-height: 1.2;
-}
-
-.scoreBar {
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     margin-bottom: var(--space-sm);
 }
 
-.scoreBarBg {
-    width: 100%;
-    height: 6px;
-    background: var(--bg-input);
-    border-radius: 3px;
+.rankPercentile {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.rankLabel {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-top: 6px;
+}
+
+/* Score Bar */
+.scoreBar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-full);
     overflow: hidden;
-    margin-bottom: 4px;
+    margin: var(--space-md) 0 var(--space-sm);
 }
 
-.scoreBarFill {
+.scoreFill {
     height: 100%;
-    background: var(--accent);
-    border-radius: 3px;
-    transition: width 0.5s ease;
-}
-
-.rankFactors {
-    margin-top: var(--space-xs);
-}
-
-/* Locked */
-.lockedContent {
+    border-radius: var(--radius-full);
+    background: var(--accent-gradient);
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
 }
 
-.blurContent {
-    filter: blur(6px);
-    user-select: none;
-    pointer-events: none;
+.scoreFill::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -3px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    box-shadow: 0 0 12px var(--accent-glow);
 }
 
-/* Overall */
-.overallCard {
+.scoreLabel {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Locked */
+.lockedCard {
+    position: relative;
+    filter: blur(3px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.lockOverlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    z-index: 2;
+    filter: none;
+    pointer-events: auto;
+    background: rgba(6, 8, 15, 0.6);
+    border-radius: var(--radius-md);
+}
+
+.lockIcon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.3));
+}
+
+/* Overall Percentile */
+.overallSection {
     text-align: center;
     padding: var(--space-lg);
+    margin-top: var(--space-md);
+}
+
+.overallHidden {
+    padding: 16px;
+    text-align: center;
+    background: var(--accent-gradient-subtle);
+    border: 1px solid var(--border-accent);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.overallHidden:hover {
+    box-shadow: var(--shadow-glow-accent);
+}
+
+.overallRevealed {
+    padding: var(--space-xl);
+    text-align: center;
+    background: var(--accent-gradient-subtle);
+    border: 1px solid var(--border-accent);
+    border-radius: var(--radius-md);
+    animation: fadeIn 0.4s ease;
 }
 
 .overallNum {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--accent-light);
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
 }

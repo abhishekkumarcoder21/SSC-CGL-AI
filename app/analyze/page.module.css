@@ -1,113 +1,204 @@
-.sectionGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-sm);
-}
+/* Analyze — Premium */
 
-.limitNotice {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    background: var(--amber-soft);
-    border-color: transparent;
-    margin-bottom: var(--space-md);
-}
-
-/* Verdict */
-.verdictCard {
-    background: var(--accent-surface);
-    border-color: var(--accent);
+.inputSection {
     margin-bottom: var(--space-lg);
 }
 
-.verdict {
+.sectionGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.sectionInput {
+    position: relative;
+}
+
+.sectionInput label {
+    display: block;
+    font-size: 0.75rem;
     font-weight: 600;
-    font-size: 0.9375rem;
-    line-height: 1.5;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-/* Weak areas */
-.weakCard {
-    margin-bottom: var(--space-sm);
+.sectionInput input {
+    width: 100%;
+    padding: 12px 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.25s;
+    outline: none;
+    backdrop-filter: blur(8px);
 }
 
-.weakHeader {
+.sectionInput input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow), 0 0 16px rgba(99, 102, 241, 0.1);
+}
+
+/* Results */
+.verdictCard {
+    text-align: center;
+    padding: var(--space-xl) var(--space-lg);
+    margin-bottom: var(--space-md);
+    background: var(--accent-gradient-subtle);
+    border: 1px solid var(--border-accent);
+}
+
+.verdictScore {
+    font-size: 3rem;
+    font-weight: 800;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.verdictText {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-top: var(--space-sm);
+}
+
+/* Weak Areas */
+.weakArea {
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
-    margin-bottom: var(--space-xs);
+    gap: 10px;
+    padding: 10px 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    margin-bottom: 8px;
+    transition: all 0.2s;
 }
 
-/* Accuracy */
+.weakArea:hover {
+    border-color: var(--border-accent);
+}
+
+.weakIcon {
+    font-size: 1.25rem;
+}
+
+.weakInfo {
+    flex: 1;
+}
+
+.weakSubject {
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+
+.weakTopic {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Accuracy Grid */
 .accuracyGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-sm);
+    gap: 10px;
+    margin-bottom: var(--space-md);
 }
 
 .accuracyItem {
+    padding: 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
     text-align: center;
 }
 
 .accuracyPct {
     font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-primary);
+    font-weight: 800;
+}
+
+.accuracyLabel {
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     margin-top: 4px;
 }
 
 /* Trend */
-.trendCard {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--space-sm);
+.trendUp {
+    color: var(--green);
 }
 
-.trendIcon {
-    font-size: 1.25rem;
-    line-height: 1;
-    margin-top: 2px;
+.trendDown {
+    color: var(--red);
 }
 
-/* Day plan */
+.trendSame {
+    color: var(--amber);
+}
+
+/* 7-Day Plan */
 .dayPlan {
     display: flex;
-    flex-direction: column;
-    gap: 6px;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
 }
 
-.dayItem {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    padding: 10px var(--space-md);
-    background: var(--bg-card);
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--border);
+.dayPlan:last-child {
+    border-bottom: none;
 }
 
 .dayNum {
-    font-size: 0.6875rem;
-    font-weight: 700;
-    color: var(--accent-light);
-    background: var(--accent-surface);
-    padding: 2px 8px;
-    border-radius: var(--radius-full);
-    min-width: 28px;
-    text-align: center;
-}
-
-/* Stop doing */
-.stopCard {
+    width: 32px;
+    height: 32px;
     display: flex;
-    align-items: flex-start;
-    gap: var(--space-sm);
-    margin-bottom: var(--space-sm);
-    background: var(--red-soft);
-    border-color: transparent;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--accent-gradient);
+    color: white;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
 }
 
-.stopIcon {
-    font-size: 1rem;
-    line-height: 1.4;
+.dayContent {
+    flex: 1;
+}
+
+.daySubject {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.dayTopics {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+}
+
+/* Stop Doing */
+.stopCard {
+    padding: 14px;
+    background: rgba(244, 63, 94, 0.06);
+    border: 1px solid rgba(244, 63, 94, 0.15);
+    border-radius: var(--radius-md);
+    margin-bottom: 8px;
+}
+
+.stopCard p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
 }

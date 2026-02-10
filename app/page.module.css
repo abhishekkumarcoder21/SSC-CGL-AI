@@ -1,65 +1,82 @@
-.loading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 60dvh;
-}
+/* Home Page — Premium */
 
 .dateHeader {
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
+  padding: 4px 0;
 }
 
-/* Plan list */
+/* Plan Items */
 .planList {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 10px;
 }
 
 .planItem {
   display: flex;
   align-items: center;
-  gap: var(--space-md);
-  padding: var(--space-md);
+  gap: 14px;
+  padding: 14px 16px;
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: all 0.2s ease;
-  user-select: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.planItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent-gradient);
+  opacity: 0.7;
+  transition: opacity 0.25s;
 }
 
 .planItem:active {
-  transform: scale(0.99);
+  transform: scale(0.98);
 }
 
-.planItem.completed {
+.completed {
   opacity: 0.5;
-  background: var(--bg-secondary);
 }
 
-.planItem.completed .planTopic {
+.completed::before {
+  background: var(--green) !important;
+}
+
+.completed .planSubject,
+.completed .planTopic {
   text-decoration: line-through;
+  text-decoration-color: var(--text-muted);
 }
 
 .checkbox {
   width: 24px;
   height: 24px;
-  min-width: 24px;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 2px solid var(--border-light);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--green);
-  transition: all 0.2s ease;
+  flex-shrink: 0;
+  transition: all 0.2s;
+  color: transparent;
 }
 
-.planItem.completed .checkbox {
-  background: var(--green-soft);
+.completed .checkbox {
+  background: var(--green);
   border-color: var(--green);
+  color: white;
+  box-shadow: 0 0 10px var(--green-glow);
 }
 
 .planContent {
@@ -68,57 +85,77 @@
 }
 
 .planSubject {
-  font-size: 0.8125rem;
-  color: var(--text-secondary);
-  margin-bottom: 2px;
+  font-size: 0.875rem;
+  font-weight: 600;
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: 8px;
+  margin-bottom: 2px;
 }
 
 .planTopic {
-  font-weight: 600;
-  font-size: 0.9375rem;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
 }
 
 .planDuration {
   font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  white-space: nowrap;
+  font-weight: 700;
+  color: var(--accent-bright);
+  background: var(--accent-surface);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
 }
 
-/* CTA */
+/* CTA Button */
 .ctaBtn {
-  text-decoration: none;
+  font-size: 1rem;
+  padding: 14px 24px;
+  letter-spacing: 0.01em;
 }
 
-/* Rank snippet */
+/* Rank Snippet */
 .rankSnippet {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
-  text-decoration: none;
+  gap: var(--space-md);
+  padding: 14px var(--space-md);
   cursor: pointer;
+  border: 1px solid var(--border-light);
+  background: var(--accent-gradient-subtle);
+}
+
+.rankSnippet:hover {
+  border-color: var(--border-accent);
 }
 
 .rankIcon {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.3));
 }
 
 .rankArrow {
   margin-left: auto;
   color: var(--text-muted);
+  font-size: 1.25rem;
 }
 
-/* Skeleton loading */
+/* Loading */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
 .skeletons {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 10px;
 }
 
 .skeletonItem {
-  height: 72px;
+  height: 64px;
   width: 100%;
 }

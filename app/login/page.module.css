@@ -1,38 +1,124 @@
+/* Login — Premium */
+
 .container {
-    min-height: calc(100dvh - var(--header-height) - var(--bottom-nav-height));
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-}
-
-.brand {
     text-align: center;
-    margin-bottom: var(--space-2xl);
 }
 
-.brand h1 {
+.lockEmoji {
+    font-size: 4rem;
+    margin-bottom: var(--space-lg);
+    filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.3));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+.title {
     font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-xl);
+}
+
+.form {
+    width: 100%;
+    max-width: 320px;
 }
 
 .phoneInput {
-    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: var(--space-md);
+    transition: all 0.25s;
+    backdrop-filter: blur(8px);
 }
 
-.prefix {
-    position: absolute;
-    left: 14px;
-    top: 50%;
-    transform: translateY(-50%);
+.phoneInput:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow), 0 0 16px rgba(99, 102, 241, 0.1);
+}
+
+.countryCode {
+    padding: 14px;
+    font-weight: 700;
     color: var(--text-muted);
-    font-size: 0.875rem;
-    font-weight: 500;
-    z-index: 1;
-    pointer-events: none;
+    border-right: 1px solid var(--border);
+    font-size: 0.9375rem;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.phoneInput input {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* OTP */
+.otpGroup {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: var(--space-lg);
 }
 
 .otpInput {
+    width: 52px;
+    height: 56px;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.375rem;
     font-weight: 700;
-    letter-spacing: 0.5em;
+    background: var(--bg-card);
+    border: 1.5px solid var(--border-light);
+    border-radius: var(--radius-md);
+    outline: none;
+    transition: all 0.25s;
+    backdrop-filter: blur(8px);
+}
+
+.otpInput:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow), 0 0 16px rgba(99, 102, 241, 0.1);
+}
+
+.resend {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    margin-top: var(--space-md);
+}
+
+.resend button {
+    color: var(--accent-light);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }

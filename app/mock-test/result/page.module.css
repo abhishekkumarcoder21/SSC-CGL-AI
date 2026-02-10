@@ -1,12 +1,25 @@
+/* Result Page — Premium */
+
 /* Tabs */
 .tabs {
     display: flex;
-    background: var(--bg-secondary);
-    border-bottom: 1px solid var(--border-primary);
+    background: rgba(6, 8, 15, 0.9);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
     overflow-x: auto;
     position: sticky;
     top: 0;
     z-index: 10;
+}
+
+.tabs::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.15), transparent);
 }
 
 .tab {
@@ -21,22 +34,35 @@
     font-weight: 500;
     cursor: pointer;
     white-space: nowrap;
+    transition: all 0.25s;
 }
 
 .activeTab {
-    color: var(--accent-light);
+    color: var(--accent-bright);
     border-bottom-color: var(--accent-light);
-    font-weight: 600;
+    font-weight: 700;
 }
 
 /* Score Card */
 .scoreCard {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-primary);
+    background: var(--accent-gradient-subtle);
+    border: 1px solid var(--border-accent);
     border-radius: var(--radius-lg);
-    padding: 28px 20px;
+    padding: 32px 20px;
     text-align: center;
     margin-bottom: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.scoreCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent-gradient);
 }
 
 .mainScore {
@@ -47,9 +73,12 @@
 }
 
 .scoreNum {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 800;
-    color: var(--accent-light);
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     line-height: 1;
 }
 
@@ -59,8 +88,8 @@
 }
 
 .verdict {
-    font-size: 1.125rem;
-    font-weight: 700;
+    font-size: 1.25rem;
+    font-weight: 800;
     margin-top: 8px;
     margin-bottom: 20px;
 }
@@ -79,24 +108,24 @@
 }
 
 .metaNum {
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-size: 1.375rem;
+    font-weight: 800;
 }
 
 /* Section Cards */
 .sectionCard {
-    margin-bottom: var(--space-sm);
+    margin-bottom: 8px;
 }
 
 .sectionName {
     font-size: 0.8125rem;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 6px;
 }
 
 .sectionBar {
     height: 6px;
-    background: var(--bg-tertiary);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 3px;
     overflow: hidden;
     margin-bottom: 6px;
@@ -104,9 +133,9 @@
 
 .sectionFill {
     height: 100%;
-    background: var(--accent-light);
+    background: var(--accent-gradient);
     border-radius: 3px;
-    transition: width 0.6s ease;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sectionScore {
@@ -117,7 +146,7 @@
 
 /* Cognitive */
 .cogCard {
-    margin-bottom: var(--space-sm);
+    margin-bottom: 10px;
 }
 
 .cogHeader {
@@ -125,12 +154,13 @@
     justify-content: space-between;
     align-items: center;
     font-size: 0.875rem;
+    font-weight: 600;
     margin-bottom: 8px;
 }
 
 .cogBar {
     height: 6px;
-    background: var(--bg-tertiary);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 3px;
     overflow: hidden;
 }
@@ -138,11 +168,13 @@
 .cogFill {
     height: 100%;
     border-radius: 3px;
-    transition: width 0.6s ease;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .weakCard {
-    margin-top: 8px;
+    margin-top: 12px;
+    background: var(--accent-gradient-subtle);
+    border: 1px solid var(--border-accent);
 }
 
 .weakList {
@@ -152,21 +184,36 @@
 }
 
 .weakChip {
-    padding: 4px 12px;
-    background: rgba(239, 68, 68, 0.12);
-    border: 1px solid rgba(239, 68, 68, 0.25);
-    border-radius: 16px;
+    padding: 5px 14px;
+    background: rgba(244, 63, 94, 0.1);
+    border: 1px solid rgba(244, 63, 94, 0.2);
+    border-radius: 20px;
     font-size: 0.8125rem;
-    color: #ef4444;
+    color: var(--red);
+    font-weight: 600;
 }
 
 /* 3-Day Plan */
 .dayCard {
     margin-bottom: var(--space-md);
+    border: 1px solid var(--border-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.dayCard::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--accent-gradient);
 }
 
 .dayTitle {
     font-size: 1rem;
+    font-weight: 700;
     margin-bottom: 12px;
 }
 
@@ -201,19 +248,22 @@
 
 .reviewSecBtn {
     padding: 6px 14px;
-    background: var(--bg-tertiary);
-    border: 1px solid var(--border-primary);
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
     border-radius: var(--radius-sm);
     color: var(--text-muted);
     font-size: 0.75rem;
+    font-weight: 600;
     cursor: pointer;
     white-space: nowrap;
+    transition: all 0.2s;
 }
 
 .reviewSecActive {
-    background: var(--accent-light);
+    background: var(--accent-gradient);
     color: white;
-    border-color: var(--accent-light);
+    border-color: transparent;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
 }
 
 .reviewQ {
@@ -229,19 +279,19 @@
 
 .reviewStatus {
     font-size: 0.75rem;
-    font-weight: 600;
-    padding: 2px 10px;
-    border-radius: 12px;
+    font-weight: 700;
+    padding: 3px 12px;
+    border-radius: 16px;
 }
 
 .rsCorrect {
-    color: #22c55e;
-    background: rgba(34, 197, 94, 0.12);
+    color: var(--green);
+    background: var(--green-soft);
 }
 
 .rsWrong {
-    color: #ef4444;
-    background: rgba(239, 68, 68, 0.12);
+    color: var(--red);
+    background: var(--red-soft);
 }
 
 .rsSkip {
@@ -266,8 +316,9 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 8px 12px;
-    background: var(--bg-tertiary);
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
     border-radius: var(--radius-sm);
     font-size: 0.875rem;
     color: var(--text-secondary);
@@ -275,27 +326,27 @@
 }
 
 .roCorrect {
-    background: rgba(34, 197, 94, 0.12);
-    border: 1px solid rgba(34, 197, 94, 0.3);
-    color: #22c55e;
+    background: var(--green-soft);
+    border-color: rgba(16, 185, 129, 0.25);
+    color: var(--green);
 }
 
 .roWrong {
-    background: rgba(239, 68, 68, 0.08);
-    border: 1px solid rgba(239, 68, 68, 0.2);
-    color: #ef4444;
+    background: var(--red-soft);
+    border-color: rgba(244, 63, 94, 0.2);
+    color: var(--red);
 }
 
 .roLetter {
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
     font-size: 0.75rem;
     border-radius: 50%;
-    background: var(--bg-secondary);
+    background: rgba(255, 255, 255, 0.06);
     flex-shrink: 0;
 }
 
@@ -303,22 +354,25 @@
 .roX {
     margin-left: auto;
     font-weight: 700;
+    font-size: 0.875rem;
 }
 
 .roCheck {
-    color: #22c55e;
+    color: var(--green);
+    filter: drop-shadow(0 0 4px var(--green-glow));
 }
 
 .roX {
-    color: #ef4444;
+    color: var(--red);
+    filter: drop-shadow(0 0 4px var(--red-glow));
 }
 
 .explanation {
     font-size: 0.8125rem;
     color: var(--text-secondary);
-    padding: 10px 12px;
+    padding: 12px 14px;
     background: rgba(99, 102, 241, 0.06);
-    border-left: 3px solid var(--accent-light);
+    border-left: 3px solid var(--accent);
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     line-height: 1.5;
 }
@@ -326,7 +380,8 @@
 .hintsUsedTag {
     margin-top: 8px;
     font-size: 0.75rem;
-    color: #f59e0b;
+    color: var(--amber);
+    font-weight: 600;
 }
 
 /* Bottom Action */
@@ -336,6 +391,7 @@
     left: 0;
     right: 0;
     padding: 12px 16px;
-    background: var(--bg-secondary);
-    border-top: 1px solid var(--border-primary);
+    background: rgba(6, 8, 15, 0.9);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border);
 }
