@@ -1,0 +1,113 @@
+.sectionGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+}
+
+.limitNotice {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: var(--amber-soft);
+    border-color: transparent;
+    margin-bottom: var(--space-md);
+}
+
+/* Verdict */
+.verdictCard {
+    background: var(--accent-surface);
+    border-color: var(--accent);
+    margin-bottom: var(--space-lg);
+}
+
+.verdict {
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+}
+
+/* Weak areas */
+.weakCard {
+    margin-bottom: var(--space-sm);
+}
+
+.weakHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xs);
+}
+
+/* Accuracy */
+.accuracyGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+}
+
+.accuracyItem {
+    text-align: center;
+}
+
+.accuracyPct {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 4px;
+}
+
+/* Trend */
+.trendCard {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+}
+
+.trendIcon {
+    font-size: 1.25rem;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+/* Day plan */
+.dayPlan {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.dayItem {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 10px var(--space-md);
+    background: var(--bg-card);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+}
+
+.dayNum {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: var(--accent-light);
+    background: var(--accent-surface);
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    min-width: 28px;
+    text-align: center;
+}
+
+/* Stop doing */
+.stopCard {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+    background: var(--red-soft);
+    border-color: transparent;
+}
+
+.stopIcon {
+    font-size: 1rem;
+    line-height: 1.4;
+}

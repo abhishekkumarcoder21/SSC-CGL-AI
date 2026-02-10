@@ -1,0 +1,68 @@
+.streakCard {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    text-align: center;
+}
+
+.streakIcon {
+    font-size: 2rem;
+}
+
+.streakNum {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.streakDivider {
+    width: 1px;
+    height: 32px;
+    background: var(--border);
+}
+
+/* Weekly grid */
+.weekGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+}
+
+.weekDay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 0;
+    border-radius: var(--radius-sm);
+    color: var(--text-muted);
+}
+
+.weekToday {
+    background: var(--accent-surface);
+    color: var(--accent-light);
+}
+
+.weekPast {
+    color: var(--text-secondary);
+}
+
+.weekDot {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    border-radius: 50%;
+}
+
+.weekToday .weekDot {
+    background: var(--accent);
+    color: #fff;
+}
+
+.weekPast .weekDot {
+    background: var(--green-soft);
+    color: var(--green);
+}

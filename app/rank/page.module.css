@@ -1,0 +1,72 @@
+.rankCard {
+    padding: var(--space-lg);
+}
+
+.rankHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.rankEmoji {
+    font-size: 1.25rem;
+}
+
+.percentileDisplay {
+    margin-bottom: var(--space-md);
+}
+
+.percentileNum {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--accent-light);
+    line-height: 1.2;
+}
+
+.scoreBar {
+    margin-bottom: var(--space-sm);
+}
+
+.scoreBarBg {
+    width: 100%;
+    height: 6px;
+    background: var(--bg-input);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 4px;
+}
+
+.scoreBarFill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+.rankFactors {
+    margin-top: var(--space-xs);
+}
+
+/* Locked */
+.lockedContent {
+    position: relative;
+}
+
+.blurContent {
+    filter: blur(6px);
+    user-select: none;
+    pointer-events: none;
+}
+
+/* Overall */
+.overallCard {
+    text-align: center;
+    padding: var(--space-lg);
+}
+
+.overallNum {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-light);
+}

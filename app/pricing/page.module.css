@@ -1,0 +1,73 @@
+.planGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+}
+
+.planCard {
+    text-align: center;
+    position: relative;
+    padding: var(--space-xl) var(--space-md);
+}
+
+.planCard.popular {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.planBadge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    padding: 2px 12px;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.saveBadge {
+    background: var(--green);
+}
+
+.planPrice {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+/* Feature table */
+.featureTable {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.featureRow {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 0.8fr;
+    gap: 4px;
+    padding: 10px var(--space-md);
+    border-bottom: 1px solid var(--border);
+}
+
+.featureRow:last-child {
+    border-bottom: none;
+}
+
+.featureLabel {
+    font-weight: 500;
+}
+
+.featureVal {
+    text-align: center;
+}
+
+.profileCard {
+    border-color: var(--border);
+}

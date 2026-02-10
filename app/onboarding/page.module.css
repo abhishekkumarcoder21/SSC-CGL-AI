@@ -1,0 +1,92 @@
+.container {
+    min-height: calc(100dvh - var(--header-height) - var(--bottom-nav-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-lg) 0;
+}
+
+.dots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: var(--space-xl);
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border-light);
+    transition: all 0.3s ease;
+}
+
+.dotActive {
+    background: var(--accent);
+    width: 24px;
+    border-radius: 4px;
+}
+
+.stepTitle {
+    margin-bottom: var(--space-xs);
+}
+
+.examBadge {
+    display: inline-flex;
+    padding: 10px 16px;
+    background: var(--accent-surface);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius-sm);
+    color: var(--accent-light);
+    font-weight: 600;
+    font-size: 0.9375rem;
+}
+
+.slider {
+    width: 100%;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-input);
+    border-radius: 3px;
+    outline: none;
+    margin-top: var(--space-sm);
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+    box-shadow: 0 0 8px var(--accent-glow);
+}
+
+.slider::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+    border: none;
+}
+
+.sliderLabels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: var(--space-xs);
+}
+
+.actions {
+    display: flex;
+    gap: var(--space-sm);
+    margin-top: var(--space-2xl);
+}
+
+.actions .btn {
+    flex: 1;
+}
