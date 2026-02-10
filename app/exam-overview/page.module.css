@@ -1,0 +1,373 @@
+.accordion {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    background: var(--card-bg);
+    transition: box-shadow 0.2s;
+}
+
+.accordion:hover {
+    box-shadow: 0 2px 12px rgba(108, 99, 255, 0.08);
+}
+
+.accordionOpen {
+    border-color: var(--accent-light);
+}
+
+.accordionHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    transition: background 0.15s;
+}
+
+.accordionHeader:hover {
+    background: var(--hover-bg);
+}
+
+.accordionTitle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.accordionEmoji {
+    font-size: 1.25rem;
+}
+
+.accordionArrow {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    transition: transform 0.2s;
+}
+
+.accordionBody {
+    padding: 0 20px 20px;
+    animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Info Grid */
+.infoGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.infoItem {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.infoLabel {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.infoValue {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text);
+}
+
+/* Table */
+.tableWrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -4px;
+}
+
+.dataTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    min-width: 320px;
+}
+
+.dataTable th {
+    background: var(--hover-bg);
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    border-bottom: 2px solid var(--border);
+    white-space: nowrap;
+}
+
+.dataTable td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+}
+
+.dataTable tbody tr:hover {
+    background: var(--hover-bg);
+}
+
+.dataTable tfoot td {
+    font-weight: 700;
+    background: var(--hover-bg);
+    border-top: 2px solid var(--border);
+}
+
+/* Vacancy Note */
+.vacancyNote {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: rgba(108, 99, 255, 0.06);
+    border-radius: 10px;
+    border: 1px solid rgba(108, 99, 255, 0.15);
+    font-size: 0.9rem;
+}
+
+.vacancyIcon {
+    font-size: 1.2rem;
+}
+
+/* Tier Card */
+.tierCard {
+    margin-bottom: 16px;
+    padding: 16px;
+    background: var(--hover-bg);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+.tierCard:last-child {
+    margin-bottom: 0;
+}
+
+.tierTitle {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: var(--accent-light);
+}
+
+/* Marking Grid */
+.markingGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.markCard {
+    text-align: center;
+    padding: 20px 12px;
+    border-radius: 12px;
+}
+
+.markCorrect {
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.markWrong {
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.markSkip {
+    background: var(--hover-bg);
+    border: 1px solid var(--border);
+}
+
+.markNum {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.markCorrect .markNum {
+    color: #10b981;
+}
+
+.markWrong .markNum {
+    color: #ef4444;
+}
+
+.markSkip .markNum {
+    color: var(--text-muted);
+}
+
+.markNote {
+    padding: 12px 16px;
+    background: rgba(245, 158, 11, 0.06);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 10px;
+}
+
+/* Normalization */
+.normSection p {
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.formulaCard {
+    padding: 16px;
+    text-align: center;
+    background: var(--hover-bg);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    margin-bottom: 16px;
+}
+
+.formulaTitle {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.formula {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent-light);
+    line-height: 1.5;
+}
+
+.normPoints {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.normPoint {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: var(--hover-bg);
+    border-radius: 8px;
+}
+
+.normIcon {
+    font-size: 1rem;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding-left: 28px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: var(--border);
+}
+
+.timelineItem {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.timelineItem:last-child {
+    margin-bottom: 0;
+}
+
+.timelineDot {
+    position: absolute;
+    left: -24px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent-bright);
+    border: 3px solid var(--card-bg);
+    box-shadow: 0 0 0 2px var(--accent-bright);
+}
+
+.timelineContent {
+    padding: 4px 0;
+}
+
+.timelineDate {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent-light);
+    margin-bottom: 2px;
+}
+
+/* Eligibility */
+.eligGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.eligCard {
+    padding: 16px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.eligIcon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.eligTitle {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: var(--accent-light);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .infoGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .markingGrid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .eligGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .accordionHeader {
+        padding: 14px 16px;
+    }
+
+    .accordionBody {
+        padding: 0 16px 16px;
+    }
+}

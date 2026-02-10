@@ -1,61 +1,105 @@
-/* Login — Premium */
+/* Login Page — Premium (Light & Dark) */
 
 .container {
-    min-height: 80vh;
+    min-height: 100dvh;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg);
+}
+
+/* Decorative blobs */
+.blob1,
+.blob2 {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.blob1 {
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, #6366f1, #8b5cf6);
+    top: -80px;
+    right: -60px;
+    opacity: 0.25;
+}
+
+.blob2 {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, #06b6d4, #3b82f6);
+    bottom: -40px;
+    left: -40px;
+    opacity: 0.25;
+}
+
+/* Card — uses theme variables */
+.card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 400px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    padding: 40px 24px;
+    backdrop-filter: blur(20px);
     text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
-.lockEmoji {
-    font-size: 4rem;
-    margin-bottom: var(--space-lg);
-    filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.3));
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-6px);
-    }
+.logo {
+    font-size: 3rem;
+    margin-bottom: 8px;
+    line-height: 1;
 }
 
 .title {
     font-size: 1.75rem;
     font-weight: 800;
-    margin-bottom: 8px;
-    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #6C63FF, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 4px;
 }
 
 .subtitle {
+    color: var(--text-muted);
     font-size: 0.875rem;
-    color: var(--text-secondary);
-    margin-bottom: var(--space-xl);
+    margin-bottom: 32px;
 }
 
+/* Form */
 .form {
-    width: 100%;
-    max-width: 320px;
+    text-align: left;
+}
+
+.label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
 }
 
 .phoneInput {
     display: flex;
     align-items: center;
-    background: var(--bg-card);
-    border: 1px solid var(--border-light);
+    gap: 0;
+    background: var(--bg-elevated, var(--bg-card));
+    border: 1.5px solid var(--border-light);
     border-radius: var(--radius-md);
     overflow: hidden;
-    margin-bottom: var(--space-md);
     transition: all 0.25s;
-    backdrop-filter: blur(8px);
 }
 
 .phoneInput:focus-within {
@@ -63,62 +107,160 @@
     box-shadow: 0 0 0 3px var(--accent-glow), 0 0 16px rgba(99, 102, 241, 0.1);
 }
 
-.countryCode {
-    padding: 14px;
+.prefix {
+    padding: 14px 12px;
     font-weight: 700;
-    color: var(--text-muted);
-    border-right: 1px solid var(--border);
-    font-size: 0.9375rem;
-    background: rgba(255, 255, 255, 0.02);
+    color: var(--text-secondary);
+    background: var(--bg-hover, rgba(0, 0, 0, 0.03));
+    border-right: 1.5px solid var(--border-light);
+    font-size: 1rem;
 }
 
-.phoneInput input {
+.input {
     flex: 1;
-    padding: 14px;
+    padding: 14px 12px;
+    background: transparent;
     border: none;
     outline: none;
-    background: transparent;
-    font-size: 1.0625rem;
+    font-size: 1.125rem;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 0.05em;
+    color: var(--text-primary);
+}
+
+.input::placeholder {
+    color: var(--text-muted);
+    font-weight: 400;
+    opacity: 0.5;
 }
 
 /* OTP */
-.otpGroup {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    margin-bottom: var(--space-lg);
-}
-
-.otpInput {
-    width: 52px;
-    height: 56px;
+.otpSent {
     text-align: center;
-    font-size: 1.375rem;
-    font-weight: 700;
-    background: var(--bg-card);
-    border: 1.5px solid var(--border-light);
-    border-radius: var(--radius-md);
-    outline: none;
-    transition: all 0.25s;
-    backdrop-filter: blur(8px);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
 }
 
-.otpInput:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px var(--accent-glow), 0 0 16px rgba(99, 102, 241, 0.1);
-}
-
-.resend {
+.changeNum {
+    display: block;
+    margin: 0 auto 24px;
+    background: none;
+    border: none;
+    color: var(--accent-bright);
     font-size: 0.8125rem;
-    color: var(--text-muted);
-    margin-top: var(--space-md);
-}
-
-.resend button {
-    color: var(--accent-light);
-    font-weight: 600;
+    cursor: pointer;
     text-decoration: underline;
     text-underline-offset: 2px;
+}
+
+.otpGrid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.otpDigit {
+    width: 100%;
+    aspect-ratio: 1;
+    max-width: 52px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--bg-elevated, var(--bg-card));
+    border: 1.5px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    outline: none;
+    transition: all 0.2s;
+}
+
+.otpDigit:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+/* Error */
+.error {
+    color: #f43f5e;
+    font-size: 0.8125rem;
+    text-align: center;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+/* Submit */
+.submitBtn {
+    width: 100%;
+    margin-top: 8px;
+}
+
+/* Terms */
+.terms {
+    text-align: center;
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+    margin-top: 16px;
+}
+
+/* Resend */
+.resend {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.8125rem;
+    cursor: pointer;
+    text-align: center;
+    padding: 8px;
+    transition: color 0.2s;
+}
+
+.resend:not(:disabled):hover {
+    color: var(--accent-bright);
+}
+
+.resend:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* ===== Light Mode Enhancements ===== */
+[data-theme="light"] .card {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .blob1 {
+    opacity: 0.15;
+}
+
+[data-theme="light"] .blob2 {
+    opacity: 0.12;
+}
+
+[data-theme="light"] .prefix {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .otpDigit {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .otpDigit:focus {
+    background: white;
+}
+
+[data-theme="light"] .phoneInput {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .phoneInput:focus-within {
+    background: white;
 }

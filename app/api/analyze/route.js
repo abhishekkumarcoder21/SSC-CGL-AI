@@ -1,74 +1,62 @@
 import { NextResponse } from 'next/server';
 
-function analyzeScores(total, sections, previousMocks) {
-    const maxMarks = 200;
-    const maxPerSection = 50;
+// SSC CGL section labels and topic diagnosis
+const EXAM_CONFIG = {
+    maxMarks: 200,
+    sections: {
+        qa: { label: 'Quantitative Aptitude', max: 50 },
+        gir: { label: 'General Intelligence & Reasoning', max: 50 },
+        eng: { label: 'English Language', max: 50 },
+        gk: { label: 'General Awareness', max: 50 },
+    },
+    topicDiagnosis: {
+        qa: { low: ['Trigonometry', 'Data Interpretation', 'Geometry'], mid: ['Algebra', 'Mensuration', 'Time & Work'], ok: ['Percentage', 'Ratio & Proportion'] },
+        gir: { low: ['Syllogism', 'Statement & Conclusion', 'Matrix'], mid: ['Coding-Decoding', 'Series', 'Blood Relations'], ok: ['Analogy', 'Classification'] },
+        eng: { low: ['Reading Comprehension', 'Cloze Test', 'Para Jumbles'], mid: ['Error Spotting', 'Sentence Improvement'], ok: ['Idioms & Phrases', 'One Word Substitution'] },
+        gk: { low: ['Modern History', 'Indian Polity', 'Geography of India'], mid: ['Ancient History', 'Physics', 'Chemistry'], ok: ['Biology', 'Static GK'] },
+    },
+};
 
-    // Calculate accuracy per section
+function analyzeScores(total, sections, previousMocks) {
+    const config = EXAM_CONFIG;
+    const maxMarks = config.maxMarks;
+
     const accuracy = {};
     const weakAreas = [];
 
-    const sectionNames = {
-        qa: { label: 'Quantitative Aptitude', weakTopics: [] },
-        gir: { label: 'General Intelligence & Reasoning', weakTopics: [] },
-        eng: { label: 'English Language', weakTopics: [] },
-        gk: { label: 'General Awareness', weakTopics: [] },
-    };
-
-    // Topic diagnosis based on score ranges
-    const topicDiagnosis = {
-        qa: {
-            low: ['Trigonometry', 'Data Interpretation', 'Geometry'],
-            mid: ['Algebra', 'Mensuration', 'Time & Work'],
-            ok: ['Percentage', 'Ratio & Proportion'],
-        },
-        gir: {
-            low: ['Syllogism', 'Statement & Conclusion', 'Matrix'],
-            mid: ['Coding-Decoding', 'Series', 'Blood Relations'],
-            ok: ['Analogy', 'Classification'],
-        },
-        eng: {
-            low: ['Reading Comprehension', 'Cloze Test', 'Para Jumbles'],
-            mid: ['Error Spotting', 'Sentence Improvement'],
-            ok: ['Idioms & Phrases', 'One Word Substitution'],
-        },
-        gk: {
-            low: ['Modern History', 'Indian Polity', 'Geography of India'],
-            mid: ['Ancient History', 'Physics', 'Chemistry'],
-            ok: ['Biology', 'Static GK'],
-        },
-    };
-
     Object.entries(sections).forEach(([key, score]) => {
+        const sectionConfig = config.sections[key];
+        if (!sectionConfig) return;
+
+        const maxPerSection = sectionConfig.max;
         const pct = Math.round((score / maxPerSection) * 100);
-        accuracy[sectionNames[key]?.label || key] = `${pct}%`;
+        accuracy[sectionConfig.label] = `${pct}%`;
 
         let severity, topics;
+        const diagnosis = config.topicDiagnosis[key];
         if (pct < 40) {
             severity = 'high';
-            topics = topicDiagnosis[key]?.low || ['General topics'];
+            topics = diagnosis?.low || ['General topics'];
         } else if (pct < 60) {
             severity = 'medium';
-            topics = topicDiagnosis[key]?.mid || ['General topics'];
+            topics = diagnosis?.mid || ['General topics'];
         } else {
             severity = 'low';
-            topics = topicDiagnosis[key]?.ok || [];
+            topics = diagnosis?.ok || [];
         }
 
         if (pct < 70) {
             weakAreas.push({
-                section: sectionNames[key]?.label || key,
+                section: sectionConfig.label,
                 weak_topics: topics.slice(0, 2),
                 severity,
             });
         }
     });
 
-    // Sort weak areas by severity
     const severityOrder = { high: 0, medium: 1, low: 2 };
     weakAreas.sort((a, b) => severityOrder[a.severity] - severityOrder[b.severity]);
 
-    // Time verdict
     const totalPct = Math.round((total / maxMarks) * 100);
     let timeVerdict;
     if (totalPct < 40) {
@@ -79,7 +67,6 @@ function analyzeScores(total, sections, previousMocks) {
         timeVerdict = 'Decent time management. Focus on accuracy in weak sections rather than speed.';
     }
 
-    // Improvement comparison
     let improvement = { trend: 'first_mock', detail: 'This is your first recorded mock. Take more to track improvement.' };
     if (previousMocks && previousMocks.length > 0) {
         const lastMock = previousMocks[previousMocks.length - 1];
@@ -93,7 +80,6 @@ function analyzeScores(total, sections, previousMocks) {
         }
     }
 
-    // 7-day plan — focus on top 2 weak areas
     const sevenDayPlan = [];
     const focusAreas = weakAreas.slice(0, 2);
     for (let day = 1; day <= 7; day++) {
@@ -108,22 +94,12 @@ function analyzeScores(total, sections, previousMocks) {
         }
     }
 
-    // Stop doing
     const stopDoing = [];
-    if (totalPct < 50) {
-        stopDoing.push('Stop attempting questions you are unsure about — negative marking is killing your score.');
-    }
-    if (weakAreas.some(w => w.severity === 'high')) {
-        stopDoing.push('Stop ignoring your weakest section. Dedicate focused time to it daily.');
-    }
-    if (totalPct > 40 && totalPct < 70) {
-        stopDoing.push('Stop studying all subjects equally — your weak areas need 2x the time.');
-    }
-    if (stopDoing.length < 2) {
-        stopDoing.push('Stop skipping revision — solve at least 20 previous year questions daily.');
-    }
+    if (totalPct < 50) stopDoing.push('Stop attempting questions you are unsure about — negative marking is killing your score.');
+    if (weakAreas.some(w => w.severity === 'high')) stopDoing.push('Stop ignoring your weakest section. Dedicate focused time to it daily.');
+    if (totalPct > 40 && totalPct < 70) stopDoing.push('Stop studying all subjects equally — your weak areas need 2x the time.');
+    if (stopDoing.length < 2) stopDoing.push('Stop skipping revision — solve at least 20 previous year questions daily.');
 
-    // Overall verdict
     let overallVerdict;
     if (totalPct < 35) {
         overallVerdict = `${total}/${maxMarks} — Serious gaps exist. Foundation building is needed before attempting more mocks.`;
@@ -151,7 +127,7 @@ function analyzeScores(total, sections, previousMocks) {
 export async function POST(request) {
     try {
         const body = await request.json();
-        const { total, sections, previousMocks } = body;
+        const { total, sections, previousMocks, exam } = body;
 
         if (total == null || !sections) {
             return NextResponse.json({ error: 'Total marks and section marks required' }, { status: 400 });

@@ -1,0 +1,380 @@
+/* Header Row */
+.headerRow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.addBtn {
+    padding: 8px 18px;
+    background: var(--accent-bright);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.addBtn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+}
+
+/* Filter Row */
+.filterRow {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-bottom: 12px;
+    padding: 2px;
+}
+
+.filterRow::-webkit-scrollbar {
+    display: none;
+}
+
+.filterChip {
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+    color: var(--text);
+}
+
+.filterChip:hover {
+    border-color: var(--accent-bright);
+}
+
+.filterActive {
+    background: var(--accent-bright);
+    color: white;
+    border-color: var(--accent-bright);
+}
+
+/* Search */
+.searchBox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.searchBox:focus-within {
+    border-color: var(--accent-bright);
+}
+
+.searchInput {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 0.9rem;
+    color: var(--text);
+    outline: none;
+}
+
+.searchInput::placeholder {
+    color: var(--text-muted);
+}
+
+.clearBtn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* Notes Grid */
+.notesGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.noteCard {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    border-left: 4px solid;
+    transition: all 0.2s;
+}
+
+.noteCard:hover {
+    box-shadow: 0 2px 12px rgba(108, 99, 255, 0.08);
+}
+
+.noteHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.noteSubject {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.noteActions {
+    display: flex;
+    gap: 4px;
+}
+
+.iconBtn {
+    background: none;
+    border: none;
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 6px;
+    transition: background 0.15s;
+    opacity: 0.5;
+}
+
+.iconBtn:hover {
+    opacity: 1;
+    background: var(--hover-bg);
+}
+
+.bookmarked {
+    opacity: 1;
+}
+
+.noteTitle {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    color: var(--text);
+}
+
+.noteBody {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+.noteFooter {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+}
+
+/* Empty State */
+.emptyState {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--card-bg);
+    border: 1px dashed var(--border);
+    border-radius: 14px;
+}
+
+/* Editor Modal */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+}
+
+.editorModal {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 85vh;
+    background: var(--bg);
+    border-radius: 20px 20px 0 0;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    animation: slideUp 0.25s ease;
+}
+
+.editorHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px 8px;
+    border-bottom: 1px solid var(--border);
+}
+
+.editorHeader h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.editorBody {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.inputTitle {
+    border: none;
+    background: transparent;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+    outline: none;
+    padding: 8px 0;
+    border-bottom: 2px solid var(--border);
+}
+
+.inputTitle:focus {
+    border-bottom-color: var(--accent-bright);
+}
+
+.inputTitle::placeholder {
+    color: var(--text-muted);
+}
+
+.editorRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.selectSmall {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text);
+    font-size: 0.85rem;
+}
+
+.colorPicker {
+    display: flex;
+    gap: 6px;
+}
+
+.colorDot {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.colorDot:hover {
+    transform: scale(1.2);
+}
+
+.colorSelected {
+    border-color: var(--text);
+    box-shadow: 0 0 0 2px var(--bg);
+}
+
+.textArea {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 0.9rem;
+    background: var(--card-bg);
+    color: var(--text);
+    resize: vertical;
+    min-height: 150px;
+    outline: none;
+    font-family: inherit;
+    line-height: 1.6;
+}
+
+.textArea:focus {
+    border-color: var(--accent-bright);
+}
+
+.textArea::placeholder {
+    color: var(--text-muted);
+}
+
+.editorFooter {
+    display: flex;
+    gap: 10px;
+    padding: 12px 20px;
+    border-top: 1px solid var(--border);
+    padding-bottom: env(safe-area-inset-bottom, 16px);
+}
+
+.cancelBtn {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.saveBtn {
+    flex: 2;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: var(--accent-bright);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.saveBtn:hover {
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+}
+
+.saveBtn:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}

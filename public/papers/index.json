@@ -1,10 +1,29 @@
 [
   {
     "id": "sample-paper-1",
-    "title": "SSC CGL Practice Paper 1",
+    "title": "SSC CGL Tier-I Practice Paper 1",
+    "exam": "SSC CGL",
     "year": 2024,
     "questions": 40,
     "duration_minutes": 60,
     "file": "/papers/sample-paper-1.json"
+  },
+  {
+    "id": "cgl-paper-2",
+    "title": "SSC CGL Tier-I Practice Paper 2",
+    "exam": "SSC CGL",
+    "year": 2024,
+    "questions": 40,
+    "duration_minutes": 60,
+    "file": "/papers/cgl-paper-2.json"
+  },
+  {
+    "id": "cgl-paper-3",
+    "title": "SSC CGL Tier-I Practice Paper 3",
+    "exam": "SSC CGL",
+    "year": 2023,
+    "questions": 40,
+    "duration_minutes": 60,
+    "file": "/papers/cgl-paper-3.json"
   }
 ]

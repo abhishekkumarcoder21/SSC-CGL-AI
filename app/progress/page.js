@@ -13,7 +13,7 @@ const TOTAL_TOPICS = {
 };
 
 export default function ProgressPage() {
-    const { loaded, profile, completedTopicsBySubject, currentStreak, todayPlan, completionPct, mockHistory } = useUser();
+    const { loaded, profile, completedTopicsBySubject, currentStreak, lastActiveDate, todayPlan, completionPct, mockHistory } = useUser();
 
     if (!loaded) {
         return <div style={{ display: 'flex', justifyContent: 'center', padding: '40px' }}><div className="spinner" /></div>;
@@ -97,6 +97,23 @@ export default function ProgressPage() {
                         thisDay.setDate(today.getDate() + mondayOffset + i);
                         const isToday = thisDay.toDateString() === today.toDateString();
                         const isPast = thisDay < today && !isToday;
+                        const isFuture = thisDay > today;
+
+                        // Determine if this past day was active using streak data
+                        let wasActive = false;
+                        if (isToday) {
+                            wasActive = completionPct > 0;
+                        } else if (isPast && lastActiveDate) {
+                            // Calculate if this day falls within the streak window
+                            const lastActive = new Date(lastActiveDate + 'T00:00:00');
+                            const dayStr = thisDay.toISOString().split('T')[0];
+                            const lastActiveStr = lastActiveDate;
+                            // Check if this day is <= lastActiveDate and within streak range
+                            if (dayStr <= lastActiveStr) {
+                                const daysBefore = Math.round((lastActive - thisDay) / (1000 * 60 * 60 * 24));
+                                wasActive = daysBefore < currentStreak;
+                            }
+                        }
 
                         return (
                             <div
@@ -105,7 +122,7 @@ export default function ProgressPage() {
                             >
                                 <span className="text-xs">{day}</span>
                                 <div className={styles.weekDot}>
-                                    {isToday ? (completionPct > 0 ? '✓' : '·') : isPast ? '✓' : ''}
+                                    {wasActive ? '✓' : (isFuture ? '' : '·')}
                                 </div>
                             </div>
                         );

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useUser } from '../context/UserContext';
 import PaywallModal from '../components/PaywallModal';
 import styles from './page.module.css';
@@ -17,19 +17,35 @@ export default function AnalyzePage() {
         eng: '',
         gk: '',
     });
+    const autoAnalyzed = useRef(false);
 
-    const handleChange = (field, value) => {
-        const num = value === '' ? '' : Math.max(0, Math.min(field === 'total' ? 200 : 50, parseInt(value) || 0));
-        setForm({ ...form, [field]: num });
-    };
-
-    const handleSubmit = async () => {
-        if (!canAnalyzeMock) {
-            setShowPaywall(true);
-            return;
+    // Auto-detect scores from mock test result page
+    useEffect(() => {
+        if (autoAnalyzed.current) return;
+        const raw = sessionStorage.getItem('auto_analyze');
+        if (raw) {
+            autoAnalyzed.current = true;
+            sessionStorage.removeItem('auto_analyze');
+            try {
+                const data = JSON.parse(raw);
+                const autoForm = {
+                    total: data.total || 0,
+                    qa: data.sections?.qa || 0,
+                    gir: data.sections?.gir || 0,
+                    eng: data.sections?.eng || 0,
+                    gk: data.sections?.gk || 0,
+                };
+                setForm(autoForm);
+                // Auto-submit
+                runAnalysis(autoForm);
+            } catch (e) {
+                console.error('Auto-analyze parse error:', e);
+            }
         }
+    }, []); // eslint-disable-line
 
-        const { total, qa, gir, eng, gk } = form;
+    async function runAnalysis(formData) {
+        const { total, qa, gir, eng, gk } = formData;
         if (total === '' || qa === '' || gir === '' || eng === '' || gk === '') return;
 
         setLoading(true);
@@ -57,6 +73,19 @@ export default function AnalyzePage() {
         } finally {
             setLoading(false);
         }
+    }
+
+    const handleChange = (field, value) => {
+        const num = value === '' ? '' : Math.max(0, Math.min(field === 'total' ? 200 : 50, parseInt(value) || 0));
+        setForm({ ...form, [field]: num });
+    };
+
+    const handleSubmit = async () => {
+        if (!canAnalyzeMock) {
+            setShowPaywall(true);
+            return;
+        }
+        runAnalysis(form);
     };
 
     const resetForm = () => {

@@ -12,7 +12,7 @@ const SUBJECTS = [
     { name: 'General Awareness', icon: '🌍' },
 ];
 
-const YEARS = [2025, 2026, 2027];
+const YEARS = [2026, 2027, 2028];
 
 export default function OnboardingPage() {
     const router = useRouter();
@@ -48,7 +48,6 @@ export default function OnboardingPage() {
 
     return (
         <div className={styles.wrapper}>
-            {/* Decorative blobs */}
             <div className={styles.blob1} />
             <div className={styles.blob2} />
 
@@ -65,28 +64,17 @@ export default function OnboardingPage() {
                     ))}
                 </div>
 
-                {/* Step 0 */}
+                {/* Step 0: Year & Hours */}
                 {step === 0 && (
                     <div className={styles.card} key="step0">
                         <div className={styles.cardHeader}>
-                            <span className={styles.stepEmoji}>🎯</span>
-                            <h1 className={styles.title}>Let&apos;s set up your plan</h1>
+                            <span className={styles.stepEmoji}>📅</span>
+                            <h1 className={styles.title}>Your SSC CGL Prep</h1>
                             <p className={styles.subtitle}>This takes 30 seconds. We&apos;ll personalize everything for you.</p>
                         </div>
 
                         <div className={styles.fieldGroup}>
-                            <label className={styles.fieldLabel}>Exam</label>
-                            <div className={styles.examBadge}>
-                                <span className={styles.examIcon}>🏛️</span>
-                                <div>
-                                    <div className={styles.examName}>SSC CGL</div>
-                                    <div className={styles.examSub}>Combined Graduate Level — Tier 1</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className={styles.fieldGroup}>
-                            <label className={styles.fieldLabel}>Attempt Year</label>
+                            <label className={styles.fieldLabel}>Target Year</label>
                             <div className={styles.yearGroup}>
                                 {YEARS.map(y => (
                                     <button
@@ -123,7 +111,7 @@ export default function OnboardingPage() {
                     </div>
                 )}
 
-                {/* Step 1 */}
+                {/* Step 1: Strong Subjects */}
                 {step === 1 && (
                     <div className={styles.card} key="step1">
                         <div className={styles.cardHeader}>
@@ -150,7 +138,7 @@ export default function OnboardingPage() {
                     </div>
                 )}
 
-                {/* Step 2 */}
+                {/* Step 2: Weak Subjects */}
                 {step === 2 && (
                     <div className={styles.card} key="step2">
                         <div className={styles.cardHeader}>

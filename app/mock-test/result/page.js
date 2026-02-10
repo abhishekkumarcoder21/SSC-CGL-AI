@@ -56,16 +56,65 @@ export default function ResultPage() {
     const [saved, setSaved] = useState(false);
     const [activeTab, setActiveTab] = useState('score');
     const [reviewSection, setReviewSection] = useState(0);
+    const [isReview, setIsReview] = useState(false);
 
     useEffect(() => {
+        // Check if loading a past attempt by ID
+        const params = new URLSearchParams(window.location.search);
+        const attemptId = params.get('attempt');
+
+        if (attemptId) {
+            // Loading a past attempt from localStorage
+            const stored = localStorage.getItem(`exam_result_${attemptId}`);
+            if (stored) {
+                setResult(JSON.parse(stored));
+                setIsReview(true);
+                setSaved(true);
+            } else {
+                // Try to find by partial match (fallback)
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key && key.startsWith('exam_result_') && key.includes(attemptId.split('_')[0])) {
+                        setResult(JSON.parse(localStorage.getItem(key)));
+                        setIsReview(true);
+                        setSaved(true);
+                        return;
+                    }
+                }
+                // Not found
+                setResult(null);
+                setIsReview(true);
+                setSaved(true);
+            }
+            return;
+        }
+
+        // Fresh result from exam
         const raw = sessionStorage.getItem('exam_result');
         if (!raw) { router.push('/mock-test'); return; }
-        setResult(JSON.parse(raw));
+        const parsed = JSON.parse(raw);
+
+        // Generate unique attempt ID and full timestamp
+        const id = `${parsed.paperId}_${Date.now()}`;
+        parsed.attemptId = id;
+        parsed.date = new Date().toISOString(); // Full ISO with time
+        setResult(parsed);
+
+        // Save full result to localStorage for later review
+        try {
+            localStorage.setItem(`exam_result_${id}`, JSON.stringify(parsed));
+        } catch (e) {
+            console.error('Failed to save result to localStorage:', e);
+        }
+
+        // Clean up session
+        sessionStorage.removeItem('exam_result');
     }, [router]);
 
     useEffect(() => {
-        if (result && !saved) {
+        if (result && !saved && !isReview) {
             saveTestAttempt({
+                attemptId: result.attemptId,
                 paperId: result.paperId,
                 paperTitle: result.paperTitle,
                 date: result.date,
@@ -79,9 +128,23 @@ export default function ResultPage() {
             });
             setSaved(true);
         }
-    }, [result, saved, saveTestAttempt]);
+    }, [result, saved, isReview, saveTestAttempt]);
 
-    if (!result) return null;
+    if (!result) {
+        if (isReview) {
+            return (
+                <div className="fade-in" style={{ padding: '16px', textAlign: 'center' }}>
+                    <div className="card" style={{ padding: '32px' }}>
+                        <div style={{ fontSize: '2.5rem', marginBottom: '12px' }}>📋</div>
+                        <h3>Review Not Available</h3>
+                        <p className="text-sm text-muted" style={{ marginTop: '8px' }}>This attempt's detailed data was not found.</p>
+                        <button className="btn btn-primary" style={{ marginTop: '16px' }} onClick={() => router.push('/mock-test')}>← Back to Tests</button>
+                    </div>
+                </div>
+            );
+        }
+        return null;
+    }
 
     const pct = Math.round((result.score / result.maxMarks) * 100);
     const plan = generate3DayPlan(result);
@@ -242,7 +305,7 @@ export default function ResultPage() {
                         {paper.sections.map((sec, i) => (
                             <button key={sec.id} className={`${styles.reviewSecBtn} ${i === reviewSection ? styles.reviewSecActive : ''}`}
                                 onClick={() => setReviewSection(i)}>
-                                {sec.name.split(' ')[0]}
+                                {sec.name.split(' ').slice(0, 2).join(' ')}
                             </button>
                         ))}
                     </div>

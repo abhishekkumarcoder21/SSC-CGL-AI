@@ -1,0 +1,131 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    z-index: 999;
+    transition: background 0.2s ease;
+}
+
+.overlayVisible {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.drawer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 75vh;
+    background: #1a1a2e;
+    border-radius: 20px 20px 0 0;
+    z-index: 1000;
+    transform: translateY(100%);
+    transition: transform 0.25s cubic-bezier(0.32, 0.72, 0, 1);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: env(safe-area-inset-bottom, 16px);
+    border-top: 2px solid rgba(108, 99, 255, 0.3);
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.5);
+}
+
+:global([data-theme="light"]) .drawer {
+    background: #ffffff;
+    border-top: 2px solid rgba(108, 99, 255, 0.2);
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.drawerOpen {
+    transform: translateY(0);
+}
+
+.handle {
+    width: 36px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    margin: 10px auto 0;
+}
+
+:global([data-theme="light"]) .handle {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px 8px;
+}
+
+.title {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+.closeBtn:hover {
+    background: var(--hover-bg);
+}
+
+.menuGrid {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 16px 20px;
+    gap: 4px;
+}
+
+.menuItem {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text);
+    transition: background 0.15s;
+}
+
+.menuItem:hover {
+    background: var(--hover-bg);
+}
+
+.menuIcon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+:global([data-theme="light"]) .menuIcon {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.menuText {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.menuLabel {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.menuDesc {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}

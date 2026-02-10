@@ -1,0 +1,673 @@
+{
+    "id": "cgl-paper-2",
+    "title": "SSC CGL Tier-I Practice Paper 2",
+    "exam": "SSC CGL",
+    "year": 2024,
+    "duration_minutes": 60,
+    "sections": [
+        {
+            "id": "qa",
+            "name": "Quantitative Aptitude",
+            "questions": [
+                {
+                    "id": 1,
+                    "text": "A man bought a cycle for ₹1,400 and sold it for ₹1,120. Find the loss percentage.",
+                    "options": [
+                        "25%",
+                        "20%",
+                        "15%",
+                        "30%"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Profit & Loss",
+                    "hint1": "Loss = CP − SP. Loss% = (Loss/CP) × 100",
+                    "hint2": "Loss = 1400 − 1120 = 280. Loss% = (280/1400) × 100",
+                    "explanation": "Loss = ₹280. Loss% = (280/1400) × 100 = 20%. Answer: B"
+                },
+                {
+                    "id": 2,
+                    "text": "The ratio of ages of A and B is 5:7. If B is 35 years old, what is A's age?",
+                    "options": [
+                        "20",
+                        "25",
+                        "30",
+                        "15"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Ratio & Proportion",
+                    "hint1": "If the ratio is 5:7 and B = 35, find the value of one part.",
+                    "hint2": "One part = 35/7 = 5. A = 5 × 5 = ?",
+                    "explanation": "One part = 35/7 = 5. A's age = 5 × 5 = 25 years. Answer: B"
+                },
+                {
+                    "id": 3,
+                    "text": "A pipe can fill a tank in 12 hours. Another pipe can empty it in 18 hours. If both pipes are opened together, how long will it take to fill the tank?",
+                    "options": [
+                        "30 hours",
+                        "36 hours",
+                        "24 hours",
+                        "42 hours"
+                    ],
+                    "correct": 1,
+                    "difficulty": "medium",
+                    "topic": "Pipes & Cisterns",
+                    "hint1": "Net rate = Fill rate − Empty rate per hour.",
+                    "hint2": "Net rate per hour = 1/12 − 1/18 = (3−2)/36 = 1/36",
+                    "explanation": "Fill rate = 1/12, Empty rate = 1/18. Net rate = 1/12 − 1/18 = 1/36. Time to fill = 36 hours. Answer: B"
+                },
+                {
+                    "id": 4,
+                    "text": "The simple interest on ₹5,000 at 8% per annum for 3 years is:",
+                    "options": [
+                        "₹1,000",
+                        "₹1,200",
+                        "₹1,400",
+                        "₹1,500"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Simple Interest",
+                    "hint1": "SI = (P × R × T) / 100",
+                    "hint2": "SI = (5000 × 8 × 3) / 100",
+                    "explanation": "SI = (5000 × 8 × 3) / 100 = ₹1,200. Answer: B"
+                },
+                {
+                    "id": 5,
+                    "text": "If the perimeter of a square is 48 cm, what is its area?",
+                    "options": [
+                        "144 cm²",
+                        "121 cm²",
+                        "169 cm²",
+                        "196 cm²"
+                    ],
+                    "correct": 0,
+                    "difficulty": "easy",
+                    "topic": "Mensuration",
+                    "hint1": "Perimeter of square = 4 × side. Find side first.",
+                    "hint2": "Side = 48/4 = 12 cm. Area = side².",
+                    "explanation": "Side = 48/4 = 12 cm. Area = 12² = 144 cm². Answer: A"
+                },
+                {
+                    "id": 6,
+                    "text": "Two trains are running in opposite directions at 60 km/h and 90 km/h. Their lengths are 120 m and 180 m. How long will they take to cross each other?",
+                    "options": [
+                        "6.2 seconds",
+                        "7.2 seconds",
+                        "8.4 seconds",
+                        "9 seconds"
+                    ],
+                    "correct": 1,
+                    "difficulty": "hard",
+                    "topic": "Time Speed Distance",
+                    "hint1": "Relative speed = sum of speeds (opposite direction). Convert km/h to m/s.",
+                    "hint2": "Relative speed = 150 km/h = 150 × 5/18 m/s. Total distance = 120 + 180 m.",
+                    "explanation": "Relative speed = 150 km/h = 125/3 m/s. Distance = 300 m. Time = 300/(125/3) = 7.2 seconds. Answer: B"
+                },
+                {
+                    "id": 7,
+                    "text": "If tan θ = 4/3, what is the value of sec θ?",
+                    "options": [
+                        "4/5",
+                        "5/3",
+                        "3/5",
+                        "5/4"
+                    ],
+                    "correct": 1,
+                    "difficulty": "medium",
+                    "topic": "Trigonometry",
+                    "hint1": "sec²θ = 1 + tan²θ",
+                    "hint2": "sec²θ = 1 + 16/9 = 25/9. sec θ = ?",
+                    "explanation": "sec²θ = 1 + (4/3)² = 1 + 16/9 = 25/9. sec θ = 5/3. Answer: B"
+                },
+                {
+                    "id": 8,
+                    "text": "If x² − 5x + 6 = 0, find the values of x.",
+                    "options": [
+                        "1 and 6",
+                        "2 and 3",
+                        "−2 and −3",
+                        "−1 and 6"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Algebra",
+                    "hint1": "Factorise the quadratic: find two numbers that multiply to 6 and add to −5.",
+                    "hint2": "(x − 2)(x − 3) = 0",
+                    "explanation": "x² − 5x + 6 = (x − 2)(x − 3) = 0. So x = 2, 3. Answer: B"
+                },
+                {
+                    "id": 9,
+                    "text": "A sum of money doubles in 5 years at simple interest. What is the rate of interest?",
+                    "options": [
+                        "15%",
+                        "20%",
+                        "25%",
+                        "10%"
+                    ],
+                    "correct": 1,
+                    "difficulty": "medium",
+                    "topic": "Simple Interest",
+                    "hint1": "If money doubles, SI = Principal. Use SI = PRT/100.",
+                    "hint2": "P = P × R × 5/100. So R = 100/5 = ?",
+                    "explanation": "SI = P (doubles). P = P × R × 5/100. R = 100/5 = 20%. Answer: B"
+                },
+                {
+                    "id": 10,
+                    "text": "The average of first 50 natural numbers is:",
+                    "options": [
+                        "25",
+                        "25.5",
+                        "26",
+                        "24.5"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Average",
+                    "hint1": "Sum of first n natural numbers = n(n+1)/2.",
+                    "hint2": "Sum = 50 × 51/2 = 1275. Average = 1275/50.",
+                    "explanation": "Sum = 50 × 51/2 = 1275. Average = 1275/50 = 25.5. Answer: B"
+                }
+            ]
+        },
+        {
+            "id": "gir",
+            "name": "General Intelligence & Reasoning",
+            "questions": [
+                {
+                    "id": 11,
+                    "text": "Find the missing number in the series: 3, 8, 15, 24, 35, ?",
+                    "options": [
+                        "46",
+                        "48",
+                        "50",
+                        "52"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Series",
+                    "hint1": "Find the differences between consecutive terms.",
+                    "hint2": "Differences: 5, 7, 9, 11, ? — increasing by 2 each time.",
+                    "explanation": "Differences: 5, 7, 9, 11, 13. So 35 + 13 = 48. Answer: B"
+                },
+                {
+                    "id": 12,
+                    "text": "If MONEY is coded as PRQHB, then HONEY is coded as:",
+                    "options": [
+                        "KRQHB",
+                        "KPQHB",
+                        "KRHQB",
+                        "KRPHB"
+                    ],
+                    "correct": 0,
+                    "difficulty": "medium",
+                    "topic": "Coding-Decoding",
+                    "hint1": "Compare each letter: M→P (+3), O→R (+3), N→Q (+3)...",
+                    "hint2": "Each letter is shifted +3 positions. Apply this to HONEY: H→K, O→R, N→Q, E→H, Y→B.",
+                    "explanation": "Each letter +3: H→K, O→R, N→Q, E→H, Y→B. HONEY = KRQHB. Answer: A"
+                },
+                {
+                    "id": 13,
+                    "text": "A is the brother of B. C is the mother of A. D is the father of C. How is A related to D?",
+                    "options": [
+                        "Son",
+                        "Grandson",
+                        "Nephew",
+                        "Brother"
+                    ],
+                    "correct": 1,
+                    "difficulty": "medium",
+                    "topic": "Blood Relations",
+                    "hint1": "C is A's mother. D is C's father.",
+                    "hint2": "So D is the father of A's mother = A's maternal grandfather.",
+                    "explanation": "D is A's mother's father, so A is D's grandson. Answer: B"
+                },
+                {
+                    "id": 14,
+                    "text": "If South-East becomes North, then North-East becomes:",
+                    "options": [
+                        "South",
+                        "West",
+                        "South-West",
+                        "North-West"
+                    ],
+                    "correct": 1,
+                    "difficulty": "hard",
+                    "topic": "Direction Sense",
+                    "hint1": "South-East is rotated 135° clockwise to become North. Apply same rotation.",
+                    "hint2": "Rotating all directions clockwise by 135°: North-East → West.",
+                    "explanation": "If SE → N (135° clockwise rotation), then NE → W. Answer: B"
+                },
+                {
+                    "id": 15,
+                    "text": "Select the Venn diagram that best represents: Dogs, Animals, Cats",
+                    "options": [
+                        "Two separate circles inside a larger circle",
+                        "Three overlapping circles",
+                        "Two overlapping circles inside a larger circle",
+                        "Three separate circles"
+                    ],
+                    "correct": 0,
+                    "difficulty": "easy",
+                    "topic": "Venn Diagrams",
+                    "hint1": "Dogs and Cats are both types of Animals.",
+                    "hint2": "Dogs and Cats are separate groups, both inside Animals.",
+                    "explanation": "Dogs and Cats are distinct subsets of Animals — two separate circles inside a larger circle. Answer: A"
+                },
+                {
+                    "id": 16,
+                    "text": "Which number replaces the question mark? 7 : 50 :: 11 : ?",
+                    "options": [
+                        "120",
+                        "121",
+                        "122",
+                        "125"
+                    ],
+                    "correct": 2,
+                    "difficulty": "medium",
+                    "topic": "Analogy",
+                    "hint1": "Find the relationship: 7² + 1 = 50.",
+                    "hint2": "11² + 1 = ?",
+                    "explanation": "7² + 1 = 50. 11² + 1 = 122. Answer: C"
+                },
+                {
+                    "id": 17,
+                    "text": "Arrange in meaningful order: 1) Diagnosis 2) Doctor 3) Treatment 4) Patient 5) Recovery",
+                    "options": [
+                        "4, 2, 1, 3, 5",
+                        "2, 4, 1, 3, 5",
+                        "4, 2, 3, 1, 5",
+                        "2, 4, 3, 1, 5"
+                    ],
+                    "correct": 0,
+                    "difficulty": "easy",
+                    "topic": "Ranking & Order",
+                    "hint1": "Start from the first logical step in a medical process.",
+                    "hint2": "Patient goes to Doctor → Doctor makes Diagnosis → Treatment → Recovery.",
+                    "explanation": "Patient(4) → Doctor(2) → Diagnosis(1) → Treatment(3) → Recovery(5). Answer: A"
+                },
+                {
+                    "id": 18,
+                    "text": "Choose the odd one out: 17, 23, 29, 33, 37",
+                    "options": [
+                        "17",
+                        "23",
+                        "33",
+                        "37"
+                    ],
+                    "correct": 2,
+                    "difficulty": "easy",
+                    "topic": "Classification",
+                    "hint1": "Check which numbers are prime.",
+                    "hint2": "17, 23, 29, 37 are all prime numbers. 33 = 3 × 11.",
+                    "explanation": "33 is not a prime number (33 = 3 × 11). All others are prime. Answer: C"
+                },
+                {
+                    "id": 19,
+                    "text": "A cube has how many edges?",
+                    "options": [
+                        "8",
+                        "10",
+                        "12",
+                        "6"
+                    ],
+                    "correct": 2,
+                    "difficulty": "easy",
+                    "topic": "Embedded Figures",
+                    "hint1": "A cube has 6 faces, 8 vertices, and how many edges?",
+                    "hint2": "Each face has 4 edges, but each edge is shared by 2 faces: (6 × 4)/2",
+                    "explanation": "A cube has 12 edges. (6 × 4)/2 = 12. Answer: C"
+                },
+                {
+                    "id": 20,
+                    "text": "If Tuesday falls on the 4th of a month, what day will the 26th be?",
+                    "options": [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday"
+                    ],
+                    "correct": 2,
+                    "difficulty": "medium",
+                    "topic": "Calendar",
+                    "hint1": "Find the number of days between 4th and 26th.",
+                    "hint2": "26 − 4 = 22 days. 22 ÷ 7 = 3 weeks + 1 day. Tuesday + 1 = ?",
+                    "explanation": "22 days difference = 3 weeks + 1 day. Tuesday + 1 = Wednesday. Answer: C"
+                }
+            ]
+        },
+        {
+            "id": "eng",
+            "name": "English Language",
+            "questions": [
+                {
+                    "id": 21,
+                    "text": "Choose the synonym of 'ABATE':",
+                    "options": [
+                        "Increase",
+                        "Reduce",
+                        "Wander",
+                        "Fight"
+                    ],
+                    "correct": 1,
+                    "difficulty": "medium",
+                    "topic": "Synonyms & Antonyms",
+                    "hint1": "Abate relates to making something less intense.",
+                    "hint2": "Think of reducing or diminishing something.",
+                    "explanation": "'Abate' means to become less intense, to reduce. Answer: B"
+                },
+                {
+                    "id": 22,
+                    "text": "Spot the error: 'He (A) told to me (B) that he would (C) come tomorrow. (D) No error'",
+                    "options": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
+                    "correct": 1,
+                    "difficulty": "medium",
+                    "topic": "Error Spotting",
+                    "hint1": "'Tell' is used differently than 'say' in English grammar.",
+                    "hint2": "We say 'told me' not 'told to me'. Remove 'to'.",
+                    "explanation": "'Told to me' should be 'told me'. 'Tell' takes a direct object. Answer: B"
+                },
+                {
+                    "id": 23,
+                    "text": "Choose the correct meaning of the idiom: 'A penny for your thoughts'",
+                    "options": [
+                        "Something very cheap",
+                        "Tell me what you're thinking",
+                        "A waste of money",
+                        "Saving money"
+                    ],
+                    "correct": 1,
+                    "difficulty": "medium",
+                    "topic": "Idioms & Phrases",
+                    "hint1": "This idiom is used when asking someone who seems lost in thought.",
+                    "hint2": "It's a way to ask someone to share their thoughts.",
+                    "explanation": "'A penny for your thoughts' is used to ask what someone is thinking about. Answer: B"
+                },
+                {
+                    "id": 24,
+                    "text": "Fill in the blank: 'Neither the teacher ___ the students were present.'",
+                    "options": [
+                        "or",
+                        "nor",
+                        "and",
+                        "but"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Fill in the Blanks",
+                    "hint1": "'Neither' is always paired with a specific conjunction.",
+                    "hint2": "The correct pair is 'Neither...nor'.",
+                    "explanation": "'Neither...nor' is the correct correlative conjunction pair. Answer: B"
+                },
+                {
+                    "id": 25,
+                    "text": "Choose the one-word substitution for: 'A government ruled by the people'",
+                    "options": [
+                        "Autocracy",
+                        "Democracy",
+                        "Monarchy",
+                        "Theocracy"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "One Word Substitution",
+                    "hint1": "'Demo' relates to people in Greek.",
+                    "hint2": "Demo + cracy = rule of the people.",
+                    "explanation": "Democracy = government by the people (demos = people, kratos = rule). Answer: B"
+                },
+                {
+                    "id": 26,
+                    "text": "Change to passive voice: 'The police arrested the thief.'",
+                    "options": [
+                        "The thief is arrested by the police.",
+                        "The thief was arrested by the police.",
+                        "The thief has been arrested by the police.",
+                        "The thief were arrested by the police."
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Active Passive Voice",
+                    "hint1": "Original is in simple past tense. Use: Object + was/were + past participle + by + Subject.",
+                    "hint2": "The thief + was + arrested + by + the police.",
+                    "explanation": "'The thief was arrested by the police.' Simple past passive. Answer: B"
+                },
+                {
+                    "id": 27,
+                    "text": "Choose the correctly spelled word:",
+                    "options": [
+                        "Occurence",
+                        "Occurrence",
+                        "Occurrance",
+                        "Occurance"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Spelling Correction",
+                    "hint1": "The word has double 'c' and double 'r'.",
+                    "hint2": "O-C-C-U-R-R-E-N-C-E",
+                    "explanation": "Correct spelling: Occurrence (double c, double r). Answer: B"
+                },
+                {
+                    "id": 28,
+                    "text": "Improve the sentence: 'He is more cleverer than his brother.'",
+                    "options": [
+                        "more clever",
+                        "cleverer",
+                        "most clever",
+                        "No improvement"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Sentence Improvement",
+                    "hint1": "Using 'more' and '-er' together is a common grammatical error.",
+                    "hint2": "Either use 'more clever' or 'cleverer', not both.",
+                    "explanation": "'More cleverer' is a double comparative. Correct: 'cleverer'. Answer: B"
+                },
+                {
+                    "id": 29,
+                    "text": "Choose the antonym of 'OPAQUE':",
+                    "options": [
+                        "Dark",
+                        "Transparent",
+                        "Dense",
+                        "Heavy"
+                    ],
+                    "correct": 1,
+                    "difficulty": "medium",
+                    "topic": "Synonyms & Antonyms",
+                    "hint1": "Opaque means not allowing light to pass through.",
+                    "hint2": "The opposite would mean allowing light to pass through clearly.",
+                    "explanation": "Opaque (not see-through) ↔ Transparent (see-through). Answer: B"
+                },
+                {
+                    "id": 30,
+                    "text": "Change to indirect speech: 'He said, \"I have finished my work.\"'",
+                    "options": [
+                        "He said that he has finished his work.",
+                        "He said that he had finished his work.",
+                        "He said that he have finished his work.",
+                        "He told that he had finished his work."
+                    ],
+                    "correct": 1,
+                    "difficulty": "medium",
+                    "topic": "Direct Indirect Speech",
+                    "hint1": "Change pronouns and apply back-shift of tense.",
+                    "hint2": "'Have finished' → 'had finished' in indirect speech.",
+                    "explanation": "He said that he had finished his work. Present perfect → past perfect. Answer: B"
+                }
+            ]
+        },
+        {
+            "id": "gk",
+            "name": "General Awareness",
+            "questions": [
+                {
+                    "id": 31,
+                    "text": "Who founded the Arya Samaj?",
+                    "options": [
+                        "Vivekananda",
+                        "Dayananda Saraswati",
+                        "Raja Ram Mohan Roy",
+                        "Iswar Chandra Vidyasagar"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Modern History",
+                    "hint1": "He was a Hindu reformer from Gujarat.",
+                    "hint2": "He wrote the book 'Satyarth Prakash'.",
+                    "explanation": "Swami Dayananda Saraswati founded the Arya Samaj in 1875. Answer: B"
+                },
+                {
+                    "id": 32,
+                    "text": "Which schedule of the Indian Constitution deals with the distribution of powers between Centre and States?",
+                    "options": [
+                        "5th Schedule",
+                        "6th Schedule",
+                        "7th Schedule",
+                        "8th Schedule"
+                    ],
+                    "correct": 2,
+                    "difficulty": "medium",
+                    "topic": "Indian Polity",
+                    "hint1": "It contains Union List, State List, and Concurrent List.",
+                    "hint2": "This schedule number is associated with three legislative lists.",
+                    "explanation": "7th Schedule contains three lists: Union, State, Concurrent. Answer: C"
+                },
+                {
+                    "id": 33,
+                    "text": "Which river is known as the 'Sorrow of Bengal'?",
+                    "options": [
+                        "Ganga",
+                        "Damodar",
+                        "Hooghly",
+                        "Brahmaputra"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Geography of India",
+                    "hint1": "This river is known for frequent devastating floods in Bengal.",
+                    "hint2": "It originates from the Chota Nagpur Plateau.",
+                    "explanation": "Damodar River is called the 'Sorrow of Bengal' due to its frequent floods. Answer: B"
+                },
+                {
+                    "id": 34,
+                    "text": "What is the chemical formula of Baking Soda?",
+                    "options": [
+                        "Na₂CO₃",
+                        "NaHCO₃",
+                        "NaOH",
+                        "CaCO₃"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Chemistry",
+                    "hint1": "Baking soda is sodium bicarbonate.",
+                    "hint2": "It's sodium (Na) + hydrogen carbonate.",
+                    "explanation": "Baking Soda = Sodium Bicarbonate = NaHCO₃. Answer: B"
+                },
+                {
+                    "id": 35,
+                    "text": "Who is the Supreme Commander of the Indian Armed Forces?",
+                    "options": [
+                        "Prime Minister",
+                        "President",
+                        "Chief of Defence Staff",
+                        "Defence Minister"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Indian Polity",
+                    "hint1": "This person is the constitutional head of the state.",
+                    "hint2": "Article 53 vests the executive power in this person.",
+                    "explanation": "The President of India is the Supreme Commander of the Indian Armed Forces. Answer: B"
+                },
+                {
+                    "id": 36,
+                    "text": "The Quit India Movement was launched in which year?",
+                    "options": [
+                        "1930",
+                        "1940",
+                        "1942",
+                        "1947"
+                    ],
+                    "correct": 2,
+                    "difficulty": "easy",
+                    "topic": "Modern History",
+                    "hint1": "Gandhi gave the slogan 'Do or Die' during this movement.",
+                    "hint2": "It was during World War II, in the early 1940s.",
+                    "explanation": "Quit India Movement was launched on 8 August 1942 by Mahatma Gandhi. Answer: C"
+                },
+                {
+                    "id": 37,
+                    "text": "Which mineral is known as 'Black Gold'?",
+                    "options": [
+                        "Iron",
+                        "Petroleum",
+                        "Coal",
+                        "Diamond"
+                    ],
+                    "correct": 2,
+                    "difficulty": "easy",
+                    "topic": "Geography of India",
+                    "hint1": "It's a combustible sedimentary rock used as fuel.",
+                    "hint2": "It is black in color and extremely valuable as an energy resource.",
+                    "explanation": "Coal is known as 'Black Gold' due to its immense value. Answer: C"
+                },
+                {
+                    "id": 38,
+                    "text": "The phenomenon of 'Mirage' is due to:",
+                    "options": [
+                        "Reflection",
+                        "Refraction",
+                        "Total Internal Reflection",
+                        "Diffraction"
+                    ],
+                    "correct": 2,
+                    "difficulty": "medium",
+                    "topic": "Physics",
+                    "hint1": "Light rays bend when passing through layers of air at different temperatures.",
+                    "hint2": "When light passes from denser to rarer medium at an angle greater than the critical angle.",
+                    "explanation": "Mirage is caused by total internal reflection of light in layers of hot air. Answer: C"
+                },
+                {
+                    "id": 39,
+                    "text": "Which is the largest gland in the human body?",
+                    "options": [
+                        "Pancreas",
+                        "Thyroid",
+                        "Liver",
+                        "Pituitary"
+                    ],
+                    "correct": 2,
+                    "difficulty": "easy",
+                    "topic": "Biology",
+                    "hint1": "It plays a role in digestion, detoxification, and protein synthesis.",
+                    "hint2": "It is located in the upper right part of the abdomen.",
+                    "explanation": "The Liver is the largest gland in the human body. Answer: C"
+                },
+                {
+                    "id": 40,
+                    "text": "Which Five Year Plan was based on the Mahalanobis Model?",
+                    "options": [
+                        "First",
+                        "Second",
+                        "Third",
+                        "Fourth"
+                    ],
+                    "correct": 1,
+                    "difficulty": "medium",
+                    "topic": "Economics",
+                    "hint1": "It focused on rapid industrialization with heavy industries.",
+                    "hint2": "It was implemented from 1956 to 1961.",
+                    "explanation": "Second Five Year Plan (1956–61) was based on the P.C. Mahalanobis Model. Answer: B"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,207 @@
+.headerRow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.askBtn {
+    padding: 8px 18px;
+    background: var(--accent-bright);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.askBtn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+}
+
+.aiBanner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    background: rgba(108, 99, 255, 0.06);
+    border: 1px solid rgba(108, 99, 255, 0.15);
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.aiIcon {
+    font-size: 1.5rem;
+}
+
+.aiTitle {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+}
+
+.formCard {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 16px;
+}
+
+.formSelect {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--hover-bg);
+    color: var(--text);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.formTextarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--hover-bg);
+    color: var(--text);
+    font-size: 0.9rem;
+    font-family: inherit;
+    resize: vertical;
+    outline: none;
+}
+
+.formTextarea:focus {
+    border-color: var(--accent-bright);
+}
+
+.formActions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    justify-content: flex-end;
+}
+
+.cancelBtn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.submitBtn {
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: none;
+    background: var(--accent-bright);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.submitBtn:disabled {
+    opacity: 0.5;
+}
+
+.doubtList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.doubtCard {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+}
+
+.resolved {
+    opacity: 0.6;
+}
+
+.doubtHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.doubtSubject {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.statusBadge {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.status_pending {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+}
+
+.status_resolved {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.doubtQuestion {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.doubtFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+}
+
+.doubtActions {
+    display: flex;
+    gap: 6px;
+}
+
+.smallBtn {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.smallBtn:hover {
+    border-color: var(--accent-bright);
+}
+
+.deleteBtn:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.emptyState {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--card-bg);
+    border: 1px dashed var(--border);
+    border-radius: 14px;
+}

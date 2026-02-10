@@ -1,10 +1,26 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { useUser } from '../context/UserContext';
+import { useAuth } from '../context/AuthContext';
 import styles from './page.module.css';
 
 export default function PricingPage() {
-    const { isPaid, upgrade, profile } = useUser();
+    const { isPaid, refreshSubscription, profile } = useUser();
+    const { isAuthenticated } = useAuth();
+    const [loading, setLoading] = useState(null); // 'monthly' | 'yearly' | null
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState(false);
+
+    // Load Razorpay script
+    useEffect(() => {
+        if (typeof window !== 'undefined' && !window.Razorpay) {
+            const script = document.createElement('script');
+            script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+            script.async = true;
+            document.body.appendChild(script);
+        }
+    }, []);
 
     const features = [
         { name: 'AI Daily Study Planner', free: '1/day, no regen', paid: '1 + 2 regens/day' },
@@ -15,7 +31,91 @@ export default function PricingPage() {
         { name: 'Study Streak', free: '✓', paid: '✓' },
     ];
 
-    if (isPaid) {
+    const handlePayment = async (planType) => {
+        if (!isAuthenticated) {
+            setError('Please login first to subscribe.');
+            return;
+        }
+
+        setLoading(planType);
+        setError('');
+
+        try {
+            // 1. Create order on server
+            const orderRes = await fetch('/api/razorpay/create-order', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ plan_type: planType }),
+            });
+
+            if (!orderRes.ok) {
+                const errData = await orderRes.json();
+                throw new Error(errData.error || 'Failed to create order');
+            }
+
+            const orderData = await orderRes.json();
+
+            // 2. Open Razorpay checkout
+            const options = {
+                key: orderData.key_id,
+                amount: orderData.amount,
+                currency: orderData.currency,
+                name: 'SSC CGL AI',
+                description: orderData.description,
+                order_id: orderData.order_id,
+                handler: async function (response) {
+                    // 3. Verify payment on server
+                    try {
+                        const verifyRes = await fetch('/api/razorpay/verify', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                razorpay_order_id: response.razorpay_order_id,
+                                razorpay_payment_id: response.razorpay_payment_id,
+                                razorpay_signature: response.razorpay_signature,
+                                plan_type: planType,
+                            }),
+                        });
+
+                        const verifyData = await verifyRes.json();
+
+                        if (verifyData.success) {
+                            setSuccess(true);
+                            if (refreshSubscription) refreshSubscription();
+                        } else {
+                            setError('Payment verification failed. Contact support.');
+                        }
+                    } catch {
+                        setError('Payment verification failed. Your money is safe — contact support.');
+                    }
+                    setLoading(null);
+                },
+                modal: {
+                    ondismiss: function () {
+                        setLoading(null);
+                    },
+                },
+                prefill: {
+                    contact: profile?.phone || '',
+                },
+                theme: {
+                    color: '#6C63FF',
+                },
+            };
+
+            const rzp = new window.Razorpay(options);
+            rzp.on('payment.failed', function (response) {
+                setError(response.error?.description || 'Payment failed. Please try again.');
+                setLoading(null);
+            });
+            rzp.open();
+        } catch (err) {
+            setError(err.message || 'Something went wrong');
+            setLoading(null);
+        }
+    };
+
+    if (success || isPaid) {
         return (
             <div className="fade-in" style={{ textAlign: 'center', padding: '40px 0' }}>
                 <div style={{ fontSize: '3rem', marginBottom: '16px' }}>✅</div>
@@ -50,22 +150,38 @@ export default function PricingPage() {
                 Get unlimited AI analysis and full ranking access.
             </p>
 
+            {error && (
+                <div className="card" style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.3)', marginBottom: '16px', padding: '12px' }}>
+                    <p className="text-sm" style={{ color: '#ef4444' }}>{error}</p>
+                </div>
+            )}
+
             {/* Plans */}
             <div className={styles.planGrid}>
                 <div className={`card ${styles.planCard} ${styles.popular}`}>
                     <div className={styles.planBadge}>Popular</div>
                     <div className={styles.planPrice}>₹199</div>
                     <div className="text-sm text-muted">/month</div>
-                    <button className="btn btn-primary" style={{ marginTop: '16px' }} onClick={upgrade}>
-                        Start Monthly
+                    <button
+                        className="btn btn-primary"
+                        style={{ marginTop: '16px' }}
+                        onClick={() => handlePayment('monthly')}
+                        disabled={loading !== null}
+                    >
+                        {loading === 'monthly' ? <span className="spinner" /> : 'Start Monthly'}
                     </button>
                 </div>
                 <div className={`card ${styles.planCard}`}>
                     <div className={`${styles.planBadge} ${styles.saveBadge}`}>Save 58%</div>
                     <div className={styles.planPrice}>₹999</div>
                     <div className="text-sm text-muted">/year</div>
-                    <button className="btn btn-secondary" style={{ marginTop: '16px' }} onClick={upgrade}>
-                        Start Yearly
+                    <button
+                        className="btn btn-secondary"
+                        style={{ marginTop: '16px' }}
+                        onClick={() => handlePayment('yearly')}
+                        disabled={loading !== null}
+                    >
+                        {loading === 'yearly' ? <span className="spinner" /> : 'Start Yearly'}
                     </button>
                 </div>
             </div>

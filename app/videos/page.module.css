@@ -1,0 +1,116 @@
+.comingSoonBanner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    background: rgba(245, 158, 11, 0.06);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.bannerIcon {
+    font-size: 1.5rem;
+}
+
+.bannerTitle {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+}
+
+.playlistCard {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.playlistHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    background: var(--hover-bg);
+}
+
+.playlistEmoji {
+    font-size: 1.3rem;
+}
+
+.playlistTitle {
+    font-size: 0.95rem;
+    font-weight: 700;
+    flex: 1;
+    margin: 0;
+}
+
+.videoCount {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    background: rgba(108, 99, 255, 0.08);
+    border-radius: 999px;
+    color: var(--accent-bright);
+    font-weight: 600;
+}
+
+.videoList {
+    padding: 4px 0;
+}
+
+.videoItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    transition: background 0.15s;
+    cursor: pointer;
+}
+
+.videoItem:hover {
+    background: var(--hover-bg);
+}
+
+.videoThumb {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--hover-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--accent-bright);
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+}
+
+.videoInfo {
+    flex: 1;
+    min-width: 0;
+}
+
+.videoTitle {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 2px;
+}
+
+.videoMeta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.proBadge {
+    font-size: 0.6rem;
+    padding: 1px 7px;
+    background: linear-gradient(135deg, #F59E0B, #D97706);
+    color: white;
+    border-radius: 4px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}

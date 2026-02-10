@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-// SSC CGL topic bank — used for smart mock generation
+// SSC CGL topic bank
 const TOPIC_BANK = {
     'Quantitative Aptitude': [
         'Number System', 'Percentage', 'Profit & Loss', 'Ratio & Proportion',
@@ -32,11 +32,10 @@ function generatePlan(profile, recentTopics) {
     const { dailyHours, strongSubjects, weakSubjects } = profile;
     const totalMinutes = dailyHours * 60;
 
-    // Pick 2 subjects — prefer weak
     const allSubjects = Object.keys(TOPIC_BANK);
     let selectedSubjects = [];
 
-    // First pick from weak
+    // Pick 2 subjects — prefer weak
     const weak = weakSubjects.filter(s => allSubjects.includes(s));
     const strong = strongSubjects.filter(s => allSubjects.includes(s));
     const neutral = allSubjects.filter(s => !strong.includes(s) && !weak.includes(s));
@@ -57,7 +56,7 @@ function generatePlan(profile, recentTopics) {
 
     // Pick 1 topic per subject, avoiding recent
     const plan = [];
-    const studyMinutes = totalMinutes - 20; // Reserve 20 min for revision
+    const studyMinutes = totalMinutes - 20;
     const perSubject = Math.round(studyMinutes / 2);
 
     selectedSubjects.forEach(subject => {
@@ -75,7 +74,7 @@ function generatePlan(profile, recentTopics) {
         });
     });
 
-    // Add revision block — from a subject NOT in today's study, or from a different topic
+    // Add revision block
     const revisionSubject = allSubjects.find(s => !selectedSubjects.includes(s)) || selectedSubjects[0];
     const revTopics = TOPIC_BANK[revisionSubject] || [];
     const revTopic = revTopics[Math.floor(Math.random() * revTopics.length)];
@@ -99,10 +98,7 @@ export async function POST(request) {
             return NextResponse.json({ error: 'Profile required' }, { status: 400 });
         }
 
-        // For MVP, use smart mock generation
-        // In Phase 2, replace with OpenAI API call using the prompt from implementation_plan.md
         const plan = generatePlan(profile, recentTopics);
-
         return NextResponse.json({ plan });
     } catch (error) {
         return NextResponse.json({ error: 'Failed to generate plan' }, { status: 500 });

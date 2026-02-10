@@ -1,0 +1,360 @@
+/* Overall Progress */
+.overallProgress {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.overallLeft {
+    text-align: center;
+    min-width: 60px;
+}
+
+.overallPct {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent-bright);
+}
+
+.overallBar {
+    flex: 1;
+    height: 8px;
+    background: var(--hover-bg);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.overallBarFill {
+    height: 100%;
+    background: linear-gradient(90deg, #6C63FF, #10B981);
+    border-radius: 999px;
+    transition: width 0.5s ease;
+}
+
+/* Subject Tabs */
+.subjectTabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 2px;
+}
+
+.subjectTabs::-webkit-scrollbar {
+    display: none;
+}
+
+.subjectTab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 10px 14px;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    background: var(--card-bg);
+    cursor: pointer;
+    min-width: 72px;
+    transition: all 0.2s;
+    font-size: 0.85rem;
+    color: var(--text);
+}
+
+.subjectTab:hover {
+    border-color: var(--tab-color);
+    background: var(--hover-bg);
+}
+
+.activeTab {
+    border-color: var(--tab-color);
+    background: var(--hover-bg);
+    box-shadow: 0 2px 8px rgba(108, 99, 255, 0.15);
+}
+
+.tabEmoji {
+    font-size: 1.2rem;
+}
+
+.tabName {
+    font-weight: 700;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tabPct {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+/* Subject Progress */
+.subjectProgress {
+    margin-bottom: 16px;
+}
+
+.subjectProgressHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.subjectBar {
+    height: 6px;
+    background: var(--hover-bg);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.subjectBarFill {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 0.5s ease;
+}
+
+/* Search Box */
+.searchBox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 16px;
+    transition: border-color 0.2s;
+}
+
+.searchBox:focus-within {
+    border-color: var(--accent-bright);
+}
+
+.searchIcon {
+    font-size: 1rem;
+}
+
+.searchInput {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 0.9rem;
+    color: var(--text);
+    outline: none;
+}
+
+.searchInput::placeholder {
+    color: var(--text-muted);
+}
+
+.searchClear {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 4px;
+}
+
+/* Topic List */
+.topicList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.topicCard {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--card-bg);
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.topicCard:hover {
+    border-color: var(--accent-light);
+}
+
+.topicHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    gap: 12px;
+    color: var(--text);
+}
+
+.topicLeft {
+    flex: 1;
+    min-width: 0;
+}
+
+.topicName {
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.importantBadge {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border-radius: 99px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.topicMeta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 4px;
+    flex-wrap: wrap;
+}
+
+.weightBadge {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 99px;
+    font-weight: 600;
+}
+
+.weight_high {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.weight_medium {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+}
+
+.weight_low {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.topicRight {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.topicPctCircle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: conic-gradient(var(--color) calc(var(--pct) * 1%), var(--hover-bg) 0%);
+    position: relative;
+}
+
+.topicPctCircle::before {
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--card-bg);
+}
+
+.topicPctText {
+    position: relative;
+    z-index: 1;
+    font-size: 0.65rem;
+    font-weight: 700;
+}
+
+.topicArrow {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+/* Subtopics */
+.subtopicList {
+    padding: 0 16px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.subtopicItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.subtopicItem:hover {
+    background: var(--hover-bg);
+}
+
+.subtopicDone {
+    opacity: 0.6;
+}
+
+.subtopicDone .subtopicName {
+    text-decoration: line-through;
+}
+
+.subtopicHighlight {
+    background: rgba(108, 99, 255, 0.08);
+    border: 1px solid rgba(108, 99, 255, 0.2);
+}
+
+.subtopicCheck {
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.subtopicName {
+    font-size: 0.9rem;
+    color: var(--text);
+}
+
+@media (max-width: 480px) {
+    .subjectTab {
+        min-width: 62px;
+        padding: 8px 10px;
+    }
+
+    .topicHeader {
+        padding: 12px 14px;
+    }
+}

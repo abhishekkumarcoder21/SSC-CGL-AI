@@ -4,6 +4,14 @@ import { useState, useEffect, useRef, useCallback, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import styles from './page.module.css';
 
+const SHORT_NAMES = {
+    'Quantitative Aptitude': 'QA',
+    'General Intelligence & Reasoning': 'Reasoning',
+    'English Language': 'English',
+    'General Awareness': 'GK',
+};
+const getShortName = (name) => SHORT_NAMES[name] || name.split(' ')[0];
+
 function ExamContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
@@ -209,7 +217,7 @@ function ExamContent() {
                         className={`${styles.sectionTab} ${i === currentSection ? styles.activeTab : ''}`}
                         onClick={() => { setCurrentSection(i); setCurrentQ(0); setShowHint(null); }}
                     >
-                        {sec.name.split(' ')[0]}
+                        {getShortName(sec.name)}
                     </button>
                 ))}
             </div>
@@ -281,7 +289,7 @@ function ExamContent() {
                     </div>
                     {paper.sections.map((sec, si) => (
                         <div key={sec.id} className={styles.paletteSection}>
-                            <div className={styles.paletteSectionTitle}>{sec.name.split(' ')[0]}</div>
+                            <div className={styles.paletteSectionTitle}>{getShortName(sec.name)}</div>
                             <div className={styles.paletteGrid}>
                                 {sec.questions.map((q, qi) => (
                                     <button

@@ -1,6 +1,7 @@
 {
     "id": "sample-paper-1",
     "title": "SSC CGL Practice Paper 1",
+    "exam": "SSC CGL",
     "year": 2024,
     "duration_minutes": 60,
     "sections": [

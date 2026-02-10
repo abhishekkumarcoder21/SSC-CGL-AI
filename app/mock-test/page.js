@@ -5,6 +5,16 @@ import Link from 'next/link';
 import { useUser } from '../context/UserContext';
 import styles from './page.module.css';
 
+function formatDateTime(dateStr) {
+    if (!dateStr) return '';
+    try {
+        const d = new Date(dateStr);
+        if (isNaN(d.getTime())) return dateStr;
+        return d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' }) +
+            ', ' + d.toLocaleTimeString('en-IN', { hour: 'numeric', minute: '2-digit', hour12: true });
+    } catch { return dateStr; }
+}
+
 export default function MockTestPage() {
     const { testAttempts } = useUser();
     const [papers, setPapers] = useState([]);
@@ -24,8 +34,8 @@ export default function MockTestPage() {
     return (
         <div className="fade-in">
             <h1 style={{ marginBottom: '4px' }}>📝 Mock Tests</h1>
-            <p className="text-sm text-muted" style={{ marginBottom: '24px' }}>
-                Take a real CGL exam. Get AI-powered diagnosis.
+            <p className="text-sm text-muted" style={{ marginBottom: '20px' }}>
+                Take a real SSC CGL exam. Get AI-powered diagnosis.
             </p>
 
             {/* Paper list */}
@@ -40,13 +50,14 @@ export default function MockTestPage() {
                             <div className={styles.paperInfo}>
                                 <h3 className={styles.paperTitle}>{paper.title}</h3>
                                 <div className={styles.paperMeta}>
-                                    <span className="badge badge-accent">{paper.questions} Questions</span>
+                                    <span className="badge badge-accent">{paper.questions} Qs</span>
                                     <span className="text-xs text-muted">{paper.duration_minutes} min</span>
+                                    {paper.year && <span className="text-xs text-muted">({paper.year})</span>}
                                 </div>
                                 {lastAttempt && (
                                     <div className={styles.lastScore}>
                                         Last: <strong>{lastAttempt.score}/{lastAttempt.maxMarks}</strong>
-                                        <span className="text-xs text-muted"> ({lastAttempt.date})</span>
+                                        <span className="text-xs text-muted"> ({formatDateTime(lastAttempt.date)})</span>
                                     </div>
                                 )}
                             </div>
@@ -63,7 +74,7 @@ export default function MockTestPage() {
 
                 {papers.length === 0 && (
                     <div className="card" style={{ textAlign: 'center', padding: '32px' }}>
-                        <p className="text-muted">No papers available yet.</p>
+                        <p className="text-muted">No mock tests available yet. Check back soon!</p>
                     </div>
                 )}
             </section>
@@ -73,14 +84,28 @@ export default function MockTestPage() {
                 <section className="section" style={{ marginTop: '8px' }}>
                     <h3 className="section-title" style={{ marginBottom: '12px' }}>Past Attempts</h3>
                     {testAttempts.slice().reverse().slice(0, 5).map((attempt, i) => (
-                        <div key={i} className={`card ${styles.attemptCard}`}>
+                        <div
+                            key={i}
+                            className={`card ${styles.attemptCard}`}
+                            onClick={() => {
+                                if (attempt.attemptId) {
+                                    window.location.href = `/mock-test/result?attempt=${attempt.attemptId}`;
+                                }
+                            }}
+                            style={{ cursor: attempt.attemptId ? 'pointer' : 'default' }}
+                        >
                             <div>
                                 <div className="text-sm" style={{ fontWeight: 600 }}>{attempt.paperTitle}</div>
-                                <div className="text-xs text-muted">{attempt.date}</div>
+                                <div className="text-xs text-muted">{formatDateTime(attempt.date)}</div>
                             </div>
-                            <div className={styles.attemptScore}>
-                                <span className={styles.scoreNum}>{attempt.score}</span>
-                                <span className="text-xs text-muted">/{attempt.maxMarks}</span>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                <div className={styles.attemptScore}>
+                                    <span className={styles.scoreNum}>{attempt.score}</span>
+                                    <span className="text-xs text-muted">/{attempt.maxMarks}</span>
+                                </div>
+                                {attempt.attemptId && (
+                                    <span className="text-xs" style={{ color: 'var(--accent-light)' }}>Review →</span>
+                                )}
                             </div>
                         </div>
                     ))}
