@@ -6,7 +6,7 @@ import styles from './BottomNav.module.css';
 
 const tabs = [
     { href: '/', label: 'Plan', icon: '📋' },
-    { href: '/analyze', label: 'Analyze', icon: '📊' },
+    { href: '/mock-test', label: 'Mock Test', icon: '📝' },
     { href: '/progress', label: 'Progress', icon: '📈' },
     { href: '/rank', label: 'Rank', icon: '🏆' },
     { href: '/pricing', label: 'Profile', icon: '👤' },
@@ -15,8 +15,8 @@ const tabs = [
 export default function BottomNav() {
     const pathname = usePathname();
 
-    // Hide on onboarding and login
-    if (pathname === '/onboarding' || pathname === '/login') return null;
+    // Hide on onboarding, login, and during exam
+    if (pathname === '/onboarding' || pathname === '/login' || pathname.startsWith('/mock-test/exam') || pathname.startsWith('/mock-test/result')) return null;
 
     return (
         <nav className={styles.nav}>

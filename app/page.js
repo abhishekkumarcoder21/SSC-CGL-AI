@@ -166,10 +166,10 @@ export default function HomePage() {
         />
       </section>
 
-      {/* 3. Analyze Mock CTA */}
+      {/* 3. Take Mock Test CTA */}
       <section className="section">
-        <Link href="/analyze" className={`btn btn-primary ${styles.ctaBtn}`}>
-          📊 Analyze Your Mock Test
+        <Link href="/mock-test" className={`btn btn-primary ${styles.ctaBtn}`}>
+          📝 Take Mock Test
         </Link>
       </section>
 

@@ -36,6 +36,9 @@ const DEFAULT_STATE = {
 
   // History for planner no-repeat rule
   recentTopics: [], // last 3 days of topics [{date, topics: [string]}]
+
+  // Mock test attempts
+  testAttempts: [], // [{ paperId, date, score, maxMarks, sections, cognitiveBreakdown, timeTaken }]
 };
 
 function loadState() {
@@ -158,6 +161,13 @@ export function UserProvider({ children }) {
     });
   }, [state.mockHistory, state.isPaid, state.freeAnalysisUsed, updateState]);
 
+  // Test attempts
+  const saveTestAttempt = useCallback((attempt) => {
+    updateState({
+      testAttempts: [...state.testAttempts, attempt],
+    });
+  }, [state.testAttempts, updateState]);
+
   // Auth
   const login = useCallback(() => updateState({ isLoggedIn: true }), [updateState]);
   const upgrade = useCallback(() => updateState({ isPaid: true }), [updateState]);
@@ -205,6 +215,7 @@ export function UserProvider({ children }) {
     setTodayPlan,
     togglePlanItem,
     addMockResult,
+    saveTestAttempt,
     login,
     upgrade,
     getWeeklyStats,

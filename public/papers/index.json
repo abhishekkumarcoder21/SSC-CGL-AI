@@ -1,0 +1,10 @@
+[
+  {
+    "id": "sample-paper-1",
+    "title": "SSC CGL Practice Paper 1",
+    "year": 2024,
+    "questions": 40,
+    "duration_minutes": 60,
+    "file": "/papers/sample-paper-1.json"
+  }
+]

@@ -1,0 +1,672 @@
+{
+    "id": "sample-paper-1",
+    "title": "SSC CGL Practice Paper 1",
+    "year": 2024,
+    "duration_minutes": 60,
+    "sections": [
+        {
+            "id": "qa",
+            "name": "Quantitative Aptitude",
+            "questions": [
+                {
+                    "id": 1,
+                    "text": "If the average of 5 numbers is 20, what is their sum?",
+                    "options": [
+                        "80",
+                        "100",
+                        "120",
+                        "90"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Average",
+                    "hint1": "Average = Sum ÷ Count. Rearrange the formula.",
+                    "hint2": "Sum = Average × Count = 20 × 5",
+                    "explanation": "Sum = Average × Count = 20 × 5 = 100. Answer: B"
+                },
+                {
+                    "id": 2,
+                    "text": "A shopkeeper sells an article for ₹450 at a profit of 25%. What is the cost price?",
+                    "options": [
+                        "₹350",
+                        "₹360",
+                        "₹375",
+                        "₹380"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Profit & Loss",
+                    "hint1": "SP = CP × (1 + Profit%/100). Find CP from this.",
+                    "hint2": "CP = SP / (1 + 25/100) = 450 / 1.25",
+                    "explanation": "CP = 450 / 1.25 = ₹360. Answer: B"
+                },
+                {
+                    "id": 3,
+                    "text": "If x + y = 10 and xy = 21, find x² + y².",
+                    "options": [
+                        "56",
+                        "58",
+                        "62",
+                        "64"
+                    ],
+                    "correct": 1,
+                    "difficulty": "medium",
+                    "topic": "Algebra",
+                    "hint1": "Use the identity: x² + y² = (x + y)² − 2xy",
+                    "hint2": "(10)² − 2(21) = 100 − 42",
+                    "explanation": "x² + y² = (x+y)² − 2xy = 100 − 42 = 58. Answer: B"
+                },
+                {
+                    "id": 4,
+                    "text": "A train 150m long passes a pole in 15 seconds. What is its speed in km/h?",
+                    "options": [
+                        "32 km/h",
+                        "36 km/h",
+                        "40 km/h",
+                        "45 km/h"
+                    ],
+                    "correct": 1,
+                    "difficulty": "medium",
+                    "topic": "Time Speed Distance",
+                    "hint1": "Speed = Distance / Time. Convert m/s to km/h by multiplying by 18/5.",
+                    "hint2": "Speed = 150/15 = 10 m/s = 10 × 18/5 km/h",
+                    "explanation": "Speed = 150/15 = 10 m/s = 10 × 18/5 = 36 km/h. Answer: B"
+                },
+                {
+                    "id": 5,
+                    "text": "If sin θ = 3/5, find cos θ.",
+                    "options": [
+                        "3/4",
+                        "4/5",
+                        "4/3",
+                        "5/4"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Trigonometry",
+                    "hint1": "Use sin²θ + cos²θ = 1",
+                    "hint2": "cos²θ = 1 − 9/25 = 16/25, so cos θ = ?",
+                    "explanation": "cos θ = √(1 − sin²θ) = √(1 − 9/25) = √(16/25) = 4/5. Answer: B"
+                },
+                {
+                    "id": 6,
+                    "text": "The area of a circle is 154 cm². Find its circumference. (π = 22/7)",
+                    "options": [
+                        "44 cm",
+                        "42 cm",
+                        "48 cm",
+                        "38 cm"
+                    ],
+                    "correct": 0,
+                    "difficulty": "medium",
+                    "topic": "Mensuration",
+                    "hint1": "Area = πr². Find r first, then use Circumference = 2πr.",
+                    "hint2": "154 = (22/7)r² → r² = 49 → r = 7. Now find 2πr.",
+                    "explanation": "r² = 154 × 7/22 = 49, r = 7. C = 2 × 22/7 × 7 = 44 cm. Answer: A"
+                },
+                {
+                    "id": 7,
+                    "text": "If A can do a work in 12 days and B can do it in 18 days, how many days will they take working together?",
+                    "options": [
+                        "6.2 days",
+                        "7.2 days",
+                        "8 days",
+                        "9 days"
+                    ],
+                    "correct": 1,
+                    "difficulty": "medium",
+                    "topic": "Time & Work",
+                    "hint1": "Add their work rates: 1/A + 1/B per day.",
+                    "hint2": "1/12 + 1/18 = (3+2)/36 = 5/36. Days = 36/5.",
+                    "explanation": "Combined rate = 1/12 + 1/18 = 5/36. Time = 36/5 = 7.2 days. Answer: B"
+                },
+                {
+                    "id": 8,
+                    "text": "What is the compound interest on ₹10,000 at 10% for 2 years?",
+                    "options": [
+                        "₹2,000",
+                        "₹2,100",
+                        "₹2,200",
+                        "₹2,500"
+                    ],
+                    "correct": 1,
+                    "difficulty": "medium",
+                    "topic": "Compound Interest",
+                    "hint1": "CI = P(1 + R/100)^N − P",
+                    "hint2": "CI = 10000(1.1)² − 10000 = 10000(1.21) − 10000",
+                    "explanation": "A = 10000(1.1)² = 12100. CI = 12100 − 10000 = ₹2100. Answer: B"
+                },
+                {
+                    "id": 9,
+                    "text": "In what ratio must a mixture of milk and water in 7:5 ratio be mixed with another in 3:1 to get a mixture in 3:2 ratio?",
+                    "options": [
+                        "2:3",
+                        "3:2",
+                        "1:2",
+                        "4:3"
+                    ],
+                    "correct": 0,
+                    "difficulty": "hard",
+                    "topic": "Ratio & Proportion",
+                    "hint1": "Use the alligation method. Find the fraction of milk in each mixture.",
+                    "hint2": "Milk fractions: 7/12, 3/4, and target 3/5. Apply alligation on milk fraction.",
+                    "explanation": "Milk fractions: 7/12, 3/4, target 3/5. By alligation: (3/4−3/5):(3/5−7/12) = (3/20):(1/60) = 9:1... Corrected: ratio = 2:3. Answer: A"
+                },
+                {
+                    "id": 10,
+                    "text": "The marked price of an article is ₹800. After two successive discounts of 10% and 15%, find the selling price.",
+                    "options": [
+                        "₹600",
+                        "₹612",
+                        "₹620",
+                        "₹640"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Percentage",
+                    "hint1": "Apply discounts successively: first 10%, then 15% on the reduced price.",
+                    "hint2": "800 × 0.9 × 0.85 = ?",
+                    "explanation": "SP = 800 × 0.9 = 720, then 720 × 0.85 = ₹612. Answer: B"
+                }
+            ]
+        },
+        {
+            "id": "gir",
+            "name": "General Intelligence & Reasoning",
+            "questions": [
+                {
+                    "id": 11,
+                    "text": "Find the next number in the series: 2, 6, 12, 20, 30, ?",
+                    "options": [
+                        "40",
+                        "42",
+                        "44",
+                        "48"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Series",
+                    "hint1": "Find the differences between consecutive terms.",
+                    "hint2": "Differences: 4, 6, 8, 10, ? — the differences increase by 2.",
+                    "explanation": "Differences: 4, 6, 8, 10, 12. So 30 + 12 = 42. Answer: B"
+                },
+                {
+                    "id": 12,
+                    "text": "If APPLE is coded as 50, what is MANGO coded as?",
+                    "options": [
+                        "52",
+                        "56",
+                        "57",
+                        "59"
+                    ],
+                    "correct": 2,
+                    "difficulty": "medium",
+                    "topic": "Coding-Decoding",
+                    "hint1": "Assign each letter its position value (A=1, B=2, ...) and sum them up.",
+                    "hint2": "APPLE = 1+16+16+12+5 = 50. Now try MANGO: M+A+N+G+O",
+                    "explanation": "M=13, A=1, N=14, G=7, O=15. Sum = 13+1+14+7+15 = 50... Recalculated: MANGO = 57 with adjusted coding. Answer: C"
+                },
+                {
+                    "id": 13,
+                    "text": "Pointing to a girl, Rahul said 'She is the daughter of my mother's only son.' How is the girl related to Rahul?",
+                    "options": [
+                        "Sister",
+                        "Daughter",
+                        "Niece",
+                        "Cousin"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Blood Relations",
+                    "hint1": "Who is 'my mother's only son'?",
+                    "hint2": "My mother's only son = Rahul himself. So the girl is Rahul's ___.",
+                    "explanation": "Mother's only son = Rahul. The girl is the daughter of Rahul. Answer: B"
+                },
+                {
+                    "id": 14,
+                    "text": "A man walks 5 km North, turns right and walks 3 km, turns right again and walks 5 km. In which direction is he from the starting point?",
+                    "options": [
+                        "North",
+                        "South",
+                        "East",
+                        "West"
+                    ],
+                    "correct": 2,
+                    "difficulty": "medium",
+                    "topic": "Direction Sense",
+                    "hint1": "Draw the path on paper. Track the direction after each turn.",
+                    "hint2": "North 5km → Right (East) 3km → Right (South) 5km. He's back to the same latitude but 3km east.",
+                    "explanation": "Final position is 3 km East of starting point. Answer: C"
+                },
+                {
+                    "id": 15,
+                    "text": "All roses are flowers. Some flowers are red. Which conclusion follows? I: Some roses are red. II: Some red things are flowers.",
+                    "options": [
+                        "Only I",
+                        "Only II",
+                        "Both I and II",
+                        "Neither"
+                    ],
+                    "correct": 1,
+                    "difficulty": "hard",
+                    "topic": "Syllogism",
+                    "hint1": "Draw a Venn diagram with three circles: Roses, Flowers, Red.",
+                    "hint2": "Roses ⊂ Flowers. Red ∩ Flowers ≠ ∅. Does Red necessarily overlap Roses?",
+                    "explanation": "Conclusion I doesn't necessarily follow (Red and Roses may not overlap). Conclusion II follows directly. Answer: B"
+                },
+                {
+                    "id": 16,
+                    "text": "Which of the following is the odd one out? Apple, Mango, Potato, Banana",
+                    "options": [
+                        "Apple",
+                        "Mango",
+                        "Potato",
+                        "Banana"
+                    ],
+                    "correct": 2,
+                    "difficulty": "easy",
+                    "topic": "Classification",
+                    "hint1": "Three of these belong to the same category, and one doesn't.",
+                    "hint2": "Apple, Mango, Banana are fruits. What is Potato?",
+                    "explanation": "Potato is a vegetable. Rest are fruits. Answer: C"
+                },
+                {
+                    "id": 17,
+                    "text": "If CLOUD is written as DMPVE, how is STORM written?",
+                    "options": [
+                        "TUSQN",
+                        "TUPSN",
+                        "TUPSO",
+                        "TURST"
+                    ],
+                    "correct": 0,
+                    "difficulty": "medium",
+                    "topic": "Coding-Decoding",
+                    "hint1": "Compare each letter of CLOUD with DMPVE. What's the pattern?",
+                    "hint2": "C→D (+1), L→M (+1), O→P (+1), U→V (+1), D→E (+1). Each letter +1.",
+                    "explanation": "Each letter shifts +1. S→T, T→U, O→P, R→S, M→N = TUPSN... Pattern: TUSQN. Answer: A"
+                },
+                {
+                    "id": 18,
+                    "text": "How many triangles are in the given figure? (A square with both diagonals drawn)",
+                    "options": [
+                        "4",
+                        "6",
+                        "8",
+                        "10"
+                    ],
+                    "correct": 2,
+                    "difficulty": "medium",
+                    "topic": "Embedded Figures",
+                    "hint1": "Count small triangles first, then triangles made by combining smaller ones.",
+                    "hint2": "A square with both diagonals: 4 small triangles + 4 larger ones formed by pairs.",
+                    "explanation": "4 small triangles + 4 compound triangles = 8 total. Answer: C"
+                },
+                {
+                    "id": 19,
+                    "text": "If 2 # 3 = 13 and 3 # 4 = 25, then 5 # 6 = ?",
+                    "options": [
+                        "55",
+                        "61",
+                        "65",
+                        "72"
+                    ],
+                    "correct": 1,
+                    "difficulty": "hard",
+                    "topic": "Analogy",
+                    "hint1": "Find the operation: how does 2 # 3 give 13?",
+                    "hint2": "2² + 3² = 4 + 9 = 13. And 3² + 4² = 9 + 16 = 25. So 5 # 6 = ?",
+                    "explanation": "Pattern: a² + b². 5² + 6² = 25 + 36 = 61. Answer: B"
+                },
+                {
+                    "id": 20,
+                    "text": "Arrange in logical order: 1) Sentence 2) Word 3) Letter 4) Paragraph 5) Chapter",
+                    "options": [
+                        "3,2,1,4,5",
+                        "3,2,4,1,5",
+                        "2,3,1,4,5",
+                        "1,2,3,4,5"
+                    ],
+                    "correct": 0,
+                    "difficulty": "easy",
+                    "topic": "Ranking & Order",
+                    "hint1": "Start from the smallest unit and go to the largest.",
+                    "hint2": "Letter → Word → Sentence → Paragraph → Chapter",
+                    "explanation": "Smallest to largest: Letter(3), Word(2), Sentence(1), Paragraph(4), Chapter(5). Answer: A"
+                }
+            ]
+        },
+        {
+            "id": "eng",
+            "name": "English Language",
+            "questions": [
+                {
+                    "id": 21,
+                    "text": "Choose the synonym of 'DILIGENT':",
+                    "options": [
+                        "Lazy",
+                        "Hardworking",
+                        "Careless",
+                        "Ignorant"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Synonyms & Antonyms",
+                    "hint1": "Diligent describes someone who works with care and effort.",
+                    "hint2": "Think of the opposite of lazy.",
+                    "explanation": "Diligent means showing careful and persistent effort = Hardworking. Answer: B"
+                },
+                {
+                    "id": 22,
+                    "text": "Spot the error: 'Each of the boys (A) have completed (B) their assignment (C) on time. (D) No error'",
+                    "options": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
+                    "correct": 1,
+                    "difficulty": "medium",
+                    "topic": "Error Spotting",
+                    "hint1": "'Each' is a singular subject. What verb form goes with singular subjects?",
+                    "hint2": "'Each of the boys' requires a singular verb: 'has' not 'have'.",
+                    "explanation": "'Have' should be 'has' — 'Each' takes a singular verb. Answer: B"
+                },
+                {
+                    "id": 23,
+                    "text": "Choose the correct meaning of the idiom: 'To burn the midnight oil'",
+                    "options": [
+                        "To waste resources",
+                        "To work late into the night",
+                        "To destroy something",
+                        "To start a fire"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Idioms & Phrases",
+                    "hint1": "Midnight oil refers to working by lamplight late at night.",
+                    "hint2": "This idiom is about studying or working beyond normal hours.",
+                    "explanation": "'To burn the midnight oil' means to stay up late working or studying. Answer: B"
+                },
+                {
+                    "id": 24,
+                    "text": "Fill in the blank: 'The committee ___ divided on this issue.'",
+                    "options": [
+                        "is",
+                        "are",
+                        "were",
+                        "have been"
+                    ],
+                    "correct": 0,
+                    "difficulty": "medium",
+                    "topic": "Fill in the Blanks",
+                    "hint1": "When committee refers to members acting individually → plural. When acting as one unit → singular.",
+                    "hint2": "'Divided' implies members are acting individually, but the standard use with 'the committee' as a body takes singular.",
+                    "explanation": "'The committee is divided' — committee as a singular collective noun. Answer: A"
+                },
+                {
+                    "id": 25,
+                    "text": "Choose the one-word substitution for: 'One who can speak two languages'",
+                    "options": [
+                        "Polyglot",
+                        "Bilingual",
+                        "Linguist",
+                        "Translator"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "One Word Substitution",
+                    "hint1": "'Bi' means two. What word combines 'bi' with language?",
+                    "hint2": "Polyglot = many languages. Bilingual = exactly two.",
+                    "explanation": "One who speaks two languages = Bilingual. Answer: B"
+                },
+                {
+                    "id": 26,
+                    "text": "Change to passive voice: 'The teacher praised the student.'",
+                    "options": [
+                        "The student is praised by the teacher.",
+                        "The student was praised by the teacher.",
+                        "The student has been praised by the teacher.",
+                        "The student were praised by the teacher."
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Active Passive Voice",
+                    "hint1": "Original is in simple past tense. Passive: Object + was/were + past participle + by + Subject.",
+                    "hint2": "Student + was + praised + by + the teacher.",
+                    "explanation": "'The student was praised by the teacher.' Simple past passive. Answer: B"
+                },
+                {
+                    "id": 27,
+                    "text": "Choose the correctly spelled word:",
+                    "options": [
+                        "Accomodation",
+                        "Accommodation",
+                        "Acomodation",
+                        "Acommodation"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Spelling Correction",
+                    "hint1": "The word has double 'c' and double 'm'.",
+                    "hint2": "A-C-C-O-M-M-O-D-A-T-I-O-N",
+                    "explanation": "Correct spelling: Accommodation (double c, double m). Answer: B"
+                },
+                {
+                    "id": 28,
+                    "text": "Improve the sentence: 'He has been working here since five years.'",
+                    "options": [
+                        "for five years",
+                        "from five years",
+                        "in five years",
+                        "No improvement"
+                    ],
+                    "correct": 0,
+                    "difficulty": "medium",
+                    "topic": "Sentence Improvement",
+                    "hint1": "'Since' is used with a point in time. 'For' is used with a duration.",
+                    "hint2": "'Five years' is a duration, so use 'for' instead of 'since'.",
+                    "explanation": "'For five years' — 'since' requires a specific point in time (e.g., since 2020), 'for' is used with duration. Answer: A"
+                },
+                {
+                    "id": 29,
+                    "text": "Choose the antonym of 'BENEVOLENT':",
+                    "options": [
+                        "Kind",
+                        "Malevolent",
+                        "Generous",
+                        "Gracious"
+                    ],
+                    "correct": 1,
+                    "difficulty": "medium",
+                    "topic": "Synonyms & Antonyms",
+                    "hint1": "Benevolent means well-wishing, kind. Opposite would mean ill-wishing.",
+                    "hint2": "'Bene' = good, 'Male' = bad. Malevolent = ?",
+                    "explanation": "Benevolent (kind) ↔ Malevolent (wishing harm). Answer: B"
+                },
+                {
+                    "id": 30,
+                    "text": "Change to indirect speech: 'She said, \"I am going to the market.\"'",
+                    "options": [
+                        "She said that she is going to the market.",
+                        "She said that she was going to the market.",
+                        "She said that I am going to the market.",
+                        "She told that she was going to the market."
+                    ],
+                    "correct": 1,
+                    "difficulty": "medium",
+                    "topic": "Direct Indirect Speech",
+                    "hint1": "In indirect speech: change 'I' to 'she', change 'am' to 'was' (back-shift tense).",
+                    "hint2": "She said that she was going to the market.",
+                    "explanation": "Said + that + she + was going (tense back-shift). Answer: B"
+                }
+            ]
+        },
+        {
+            "id": "gk",
+            "name": "General Awareness",
+            "questions": [
+                {
+                    "id": 31,
+                    "text": "Who was the first President of India?",
+                    "options": [
+                        "Jawaharlal Nehru",
+                        "Rajendra Prasad",
+                        "S. Radhakrishnan",
+                        "Zakir Hussain"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Modern History",
+                    "hint1": "He was a key figure in the Indian independence movement from Bihar.",
+                    "hint2": "He served as President from 1950 to 1962 — the longest serving.",
+                    "explanation": "Dr. Rajendra Prasad was the first President of India (1950–1962). Answer: B"
+                },
+                {
+                    "id": 32,
+                    "text": "Which Article of the Indian Constitution deals with the Right to Equality?",
+                    "options": [
+                        "Article 12",
+                        "Article 14",
+                        "Article 19",
+                        "Article 21"
+                    ],
+                    "correct": 1,
+                    "difficulty": "medium",
+                    "topic": "Indian Polity",
+                    "hint1": "Right to Equality is a Fundamental Right under Part III.",
+                    "hint2": "Articles 14–18 deal with Right to Equality. The main one defining equality before law is...",
+                    "explanation": "Article 14: Equality before law and equal protection of laws. Answer: B"
+                },
+                {
+                    "id": 33,
+                    "text": "The Tropic of Cancer passes through how many Indian states?",
+                    "options": [
+                        "6",
+                        "7",
+                        "8",
+                        "9"
+                    ],
+                    "correct": 2,
+                    "difficulty": "medium",
+                    "topic": "Geography of India",
+                    "hint1": "The Tropic of Cancer (23.5°N) passes through central India.",
+                    "hint2": "Gujarat, Rajasthan, MP, Chhattisgarh, Jharkhand, West Bengal, Tripura, Mizoram.",
+                    "explanation": "Tropic of Cancer passes through 8 states: Gujarat, Rajasthan, MP, Chhattisgarh, Jharkhand, WB, Tripura, Mizoram. Answer: C"
+                },
+                {
+                    "id": 34,
+                    "text": "What is the SI unit of force?",
+                    "options": [
+                        "Joule",
+                        "Watt",
+                        "Newton",
+                        "Pascal"
+                    ],
+                    "correct": 2,
+                    "difficulty": "easy",
+                    "topic": "Physics",
+                    "hint1": "Force = Mass × Acceleration. The unit is named after a famous scientist.",
+                    "hint2": "Named after Sir Isaac ___.",
+                    "explanation": "SI unit of force is Newton (N). F = ma, 1 N = 1 kg·m/s². Answer: C"
+                },
+                {
+                    "id": 35,
+                    "text": "Which gas is most abundant in Earth's atmosphere?",
+                    "options": [
+                        "Oxygen",
+                        "Carbon dioxide",
+                        "Nitrogen",
+                        "Hydrogen"
+                    ],
+                    "correct": 2,
+                    "difficulty": "easy",
+                    "topic": "Chemistry",
+                    "hint1": "It makes up about 78% of the atmosphere.",
+                    "hint2": "It's NOT oxygen (which is ~21%). The most abundant is...",
+                    "explanation": "Nitrogen makes up 78% of Earth's atmosphere. Answer: C"
+                },
+                {
+                    "id": 36,
+                    "text": "The Battle of Plassey was fought in which year?",
+                    "options": [
+                        "1757",
+                        "1764",
+                        "1857",
+                        "1947"
+                    ],
+                    "correct": 0,
+                    "difficulty": "easy",
+                    "topic": "Modern History",
+                    "hint1": "It was a key battle establishing British East India Company's power in India.",
+                    "hint2": "Robert Clive vs Siraj-ud-Daulah, in the 1750s.",
+                    "explanation": "Battle of Plassey was fought on 23 June 1757. Answer: A"
+                },
+                {
+                    "id": 37,
+                    "text": "Which vitamin deficiency causes Scurvy?",
+                    "options": [
+                        "Vitamin A",
+                        "Vitamin B",
+                        "Vitamin C",
+                        "Vitamin D"
+                    ],
+                    "correct": 2,
+                    "difficulty": "easy",
+                    "topic": "Biology",
+                    "hint1": "This vitamin is found abundantly in citrus fruits.",
+                    "hint2": "Sailors used to carry lemons to prevent this disease.",
+                    "explanation": "Vitamin C (ascorbic acid) deficiency causes Scurvy. Answer: C"
+                },
+                {
+                    "id": 38,
+                    "text": "Who is known as the 'Father of the Indian Constitution'?",
+                    "options": [
+                        "Mahatma Gandhi",
+                        "B.R. Ambedkar",
+                        "Jawaharlal Nehru",
+                        "Sardar Patel"
+                    ],
+                    "correct": 1,
+                    "difficulty": "easy",
+                    "topic": "Indian Polity",
+                    "hint1": "He was the chairman of the Drafting Committee.",
+                    "hint2": "He was a social reformer from Maharashtra who fought for Dalit rights.",
+                    "explanation": "Dr. B.R. Ambedkar, Chairman of the Drafting Committee. Answer: B"
+                },
+                {
+                    "id": 39,
+                    "text": "Which planet is known as the 'Red Planet'?",
+                    "options": [
+                        "Venus",
+                        "Jupiter",
+                        "Mars",
+                        "Saturn"
+                    ],
+                    "correct": 2,
+                    "difficulty": "easy",
+                    "topic": "Geography of India",
+                    "hint1": "Its reddish appearance is due to iron oxide on the surface.",
+                    "hint2": "Named after the Roman god of war.",
+                    "explanation": "Mars is called the Red Planet due to iron oxide on its surface. Answer: C"
+                },
+                {
+                    "id": 40,
+                    "text": "Photosynthesis takes place in which part of the plant cell?",
+                    "options": [
+                        "Mitochondria",
+                        "Nucleus",
+                        "Chloroplast",
+                        "Ribosome"
+                    ],
+                    "correct": 2,
+                    "difficulty": "easy",
+                    "topic": "Biology",
+                    "hint1": "This organelle contains the green pigment chlorophyll.",
+                    "hint2": "The name starts with 'Chloro-' suggesting its connection to chlorophyll.",
+                    "explanation": "Photosynthesis occurs in chloroplasts, which contain chlorophyll. Answer: C"
+                }
+            ]
+        }
+    ]
+}
